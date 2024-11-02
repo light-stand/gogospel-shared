@@ -20,7 +20,6 @@ class MissionRepository extends Repository<Mission> {
   // for when we have a millions missions :)
   getMissionsOnView = async (view: MissionViewInput): Promise<Mission[]> => {
     const { data, error } = await this.client.rpc("missions_in_view", view);
-    console.log(data);
     if (error) {
       console.error("Error fetching data:", error);
       throw error;

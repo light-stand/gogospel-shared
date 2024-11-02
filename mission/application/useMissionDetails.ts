@@ -1,14 +1,16 @@
 import { useEffect } from "react";
-import { useQuery } from "react-query";
+import { useQuery, useQueryClient } from "react-query";
 
-import { getLocation } from "@/maps/interface/mapsService";
 import { haversineDistance } from "@/maps/utils/distance";
 import { missionRepository } from "@/mission/interface/missionRepository";
 import { useUserStore } from "@/user/store/useUserStore";
-import { queryClient } from "@/interface/queryClient";
 
-export const useMissionDetails = (id: number) => {
+export const useMissionDetails = (
+  id: number,
+  location?: { latitude: number; longitude: number }
+) => {
   const { user } = useUserStore();
+  const queryClient = useQueryClient();
 
   const { data: mission, isLoading } = useQuery({
     queryKey: ["mission", id],
@@ -20,11 +22,10 @@ export const useMissionDetails = (id: number) => {
   });
 
   const getMissionDistance = async () => {
-    const userLocation = await getLocation();
-    if (!userLocation || !mission?.lat || !mission?.long) return;
+    if (!location || !mission?.lat || !mission?.long) return;
     const distance = haversineDistance(
-      userLocation?.latitude,
-      userLocation?.longitude,
+      location?.latitude,
+      location?.longitude,
       mission.lat,
       mission.long
     );
