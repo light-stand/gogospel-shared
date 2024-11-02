@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { SplashScreen } from "expo-router";
-import { useAuthInit } from "@/auth/application/useAuthInit";
+import { useAuthInit } from "@/auth/hooks/useAuthInit";
 import { useUserInit } from "@/user/application/useUserInit";
 import {
   useFonts,
