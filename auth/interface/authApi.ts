@@ -1,5 +1,4 @@
 import { supabase } from "@/interface/supabase";
-import { t } from "i18next";
 
 export const login = async (data: { email: string; password: string }) => {
   const response = await supabase.auth.signInWithPassword(data);
