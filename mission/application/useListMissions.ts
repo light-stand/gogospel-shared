@@ -1,11 +1,13 @@
-import { useUserStore } from "@/user/store/useUserStore";
-import { missionRepository } from "../interface/missionRepository";
-import { useQuery } from "react-query";
 import { useState } from "react";
+import { useQuery } from "react-query";
+
+import { useUserStore } from "@/user/store/useUserStore";
 import { MissionListTypes } from "../domain/MissionListType";
 import { SupabaseFilter } from "@/interface/repository";
+import { useApi } from "@/common/context/ApiContext";
 
 export const useListMissions = () => {
+  const { repo } = useApi();
   const { user } = useUserStore();
   const [mode, setMode] = useState<MissionListTypes>("myMissions");
 
@@ -33,7 +35,7 @@ export const useListMissions = () => {
   const query = useQuery({
     queryKey: ["listMissions", mode],
     queryFn: () =>
-      missionRepository.get(listMissionFilters as SupabaseFilter | SupabaseFilter[], select),
+      repo?.mission.get(listMissionFilters as SupabaseFilter | SupabaseFilter[], select),
   });
 
   return { query, mode, setMode };

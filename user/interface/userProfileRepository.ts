@@ -1,5 +1,9 @@
 import { Repository } from "@/interface/repository";
-import { supabase } from "@/interface/supabase";
 import { UserProfile } from "../domain/User";
+import { SupabaseClient } from "@supabase/supabase-js";
 
-export const userProfileRepository = new Repository<UserProfile>("user_profile", supabase);
+export class UserProfileRepository extends Repository<UserProfile> {
+  constructor(client: SupabaseClient) {
+    super("user_profile", client);
+  }
+}

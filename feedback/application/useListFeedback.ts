@@ -2,13 +2,14 @@ import { useState } from "react";
 import { useQuery } from "react-query";
 
 import { useUserStore } from "@/user/store/useUserStore";
-import { feedbackRepository } from "../interface/feedbackRepository";
 import { SupabaseFilter } from "@/interface/repository";
 import { ListFeedbackModes } from "../domain/Feedback";
+import { useApi } from "@/common/context/ApiContext";
 
 export const useListFeedback = (userId?: string) => {
   const { user } = useUserStore();
   const [mode, setMode] = useState<ListFeedbackModes>("received");
+  const { repo } = useApi();
 
   const listFeedbackFilters =
     mode === "received" ? ["target_user_id", "eq", userId] : ["user_id", "eq", user?.id];
@@ -24,7 +25,7 @@ export const useListFeedback = (userId?: string) => {
     query: useQuery({
       queryKey: ["listFeedback", listFeedbackFilters],
       queryFn: () =>
-        feedbackRepository.get(listFeedbackFilters as SupabaseFilter | SupabaseFilter[], select),
+        repo?.feedback.get(listFeedbackFilters as SupabaseFilter | SupabaseFilter[], select),
     }),
     mode,
     setMode,

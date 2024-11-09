@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { useQuery, useQueryClient } from "react-query";
 
 import { haversineDistance } from "@/maps/utils/distance";
-import { missionRepository } from "@/mission/interface/missionRepository";
 import { useUserStore } from "@/user/store/useUserStore";
+import { useApi } from "@/common/context/ApiContext";
 
 export const useMissionDetails = (
   id: number,
@@ -11,11 +11,12 @@ export const useMissionDetails = (
 ) => {
   const { user } = useUserStore();
   const queryClient = useQueryClient();
+  const { repo } = useApi();
 
   const { data: mission, isLoading } = useQuery({
     queryKey: ["mission", id],
     queryFn: () =>
-      missionRepository.getById(
+      repo?.mission.getById(
         id,
         "*, user_profile!created_by(user_id, name, images), favorite(user_id)"
       ),

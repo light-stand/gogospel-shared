@@ -1,21 +1,22 @@
 import { useMemo } from "react";
+import { Alert } from "react-native";
+import { useRouter } from "expo-router";
+import { t } from "i18next";
 import { useMutation, useQueryClient } from "react-query";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useRouter } from "expo-router";
 
 import { useUserStore } from "@/user/store/useUserStore";
-import { feedbackRepository } from "../interface/feedbackRepository";
 import { FeedbackCreationFields, feedbackCreationSchema } from "../domain/FeedbackSendForm";
 import { Connection } from "@/connections/domain/Connection";
-import { Alert } from "react-native";
-import { t } from "i18next";
 import { RepositoryError } from "@/interface/repository";
+import { useApi } from "@/common/context/ApiContext";
 
 export const useSendFeedback = (connectionId?: number) => {
   const router = useRouter();
   const { user } = useUserStore();
   const queryClient = useQueryClient();
+  const { repo } = useApi();
 
   const connection = useMemo(() => {
     const connections = queryClient.getQueryData<Connection[]>(["connections", user.id]);
@@ -39,7 +40,7 @@ export const useSendFeedback = (connectionId?: number) => {
     router.back();
   };
 
-  const { mutateAsync: sendFeedbackMutation } = useMutation(feedbackRepository.create, {
+  const { mutateAsync: sendFeedbackMutation } = useMutation(repo?.feedback.create, {
     onSuccess,
     onError: (error) => {
       Alert.alert(

@@ -3,16 +3,16 @@ import { useRouter } from "expo-router";
 import { useAuthStore } from "@/auth/store/useAuthStore";
 import { User } from "../domain/User";
 import { useUserStore } from "../store/useUserStore";
-import { userProfileRepository } from "../interface/userProfileRepository";
+import { type UserProfileRepository } from "../interface/userProfileRepository";
 
-export const useUserInit = () => {
+export const useUserInit = (userProfileRepository?: UserProfileRepository) => {
   const router = useRouter();
   const { session } = useAuthStore();
   const { setUser, user } = useUserStore();
 
   // TEMP: This is a temporary solution to redirect users to the onboarding process
   const fetchUserProfiles = async () => {
-    if (session?.user.id && session.user.id !== user?.id) {
+    if (userProfileRepository && session?.user.id && session.user.id !== user?.id) {
       const [userProfile] = await userProfileRepository.get(["user_id", "eq", session.user.id]);
 
       if (session?.user.id && !userProfile) {
@@ -30,6 +30,6 @@ export const useUserInit = () => {
   };
 
   useEffect(() => {
-    if (session) fetchUserProfiles();
-  }, [session]);
+    if (session && userProfileRepository) fetchUserProfiles();
+  }, [session, userProfileRepository]);
 };

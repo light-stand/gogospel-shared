@@ -1,15 +1,17 @@
-import { useMutation, useQueryClient } from "react-query";
-import { connectionRepository } from "../interface/connectionRepository";
-import { useUserStore } from "@/user/store/useUserStore";
 import { Alert } from "react-native";
-import { Mission } from "@/mission/domain/Mission";
 import { useRouter } from "expo-router";
+import { useMutation, useQueryClient } from "react-query";
 import { useTranslation } from "react-i18next";
-import { SupabaseError } from "@/interface/supabase";
+
+import { useUserStore } from "@/user/store/useUserStore";
+import { Mission } from "@/mission/domain/Mission";
+import { SupabaseError } from "@/common/interface/api";
 import { sendMessage } from "@/chat/interface/chatApi";
+import { useApi } from "@/common/context/ApiContext";
 
 export const useSendSubmission = (mission?: Mission) => {
   const router = useRouter();
+  const { repo, client } = useApi();
   const queryClient = useQueryClient();
   const { t } = useTranslation();
 
@@ -24,12 +26,12 @@ export const useSendSubmission = (mission?: Mission) => {
 
   const { mutateAsync: sendMessageMutation } = useMutation({
     mutationKey: "sendMessage",
-    mutationFn: sendMessage,
+    mutationFn: sendMessage(client),
   });
 
   const { mutateAsync: createConnection } = useMutation({
     mutationKey: "sendSubmission",
-    mutationFn: connectionRepository.create,
+    mutationFn: repo?.connection.create,
     onSuccess,
     onError,
   });

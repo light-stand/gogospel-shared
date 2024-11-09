@@ -1,11 +1,11 @@
+import { SupabaseClient } from "@supabase/supabase-js";
 import { Repository } from "@/interface/repository";
 import { Mission, MissionViewInput } from "../domain/Mission";
-import { supabase } from "@/interface/supabase";
 import { ExploreFiltersInput } from "../domain/ExploreFilters";
 
-class MissionRepository extends Repository<Mission> {
-  constructor() {
-    super("mission_view", supabase);
+export class MissionRepository extends Repository<Mission> {
+  constructor(client: SupabaseClient) {
+    super("mission_view", client);
   }
 
   // Apply filters and location
@@ -28,5 +28,3 @@ class MissionRepository extends Repository<Mission> {
     return data as Mission[];
   };
 }
-
-export const missionRepository = new MissionRepository();

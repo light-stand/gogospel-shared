@@ -1,13 +1,14 @@
 import { useMutation } from "react-query";
-import { connectionRepository } from "../interface/connectionRepository";
 import { Alert } from "react-native";
 import { useTranslation } from "react-i18next";
 import { queryClient } from "@/interface/queryClient";
-import { SupabaseError } from "@/interface/supabase";
+import { SupabaseError } from "@/common/interface/api";
 import { ConnectionStatus } from "../domain/Connection";
+import { useApi } from "@/common/context/ApiContext";
 
 export const useManageSubmission = (connectionId: number) => {
   const { t } = useTranslation();
+  const { repo } = useApi();
 
   const onSuccess = () => {
     queryClient.invalidateQueries(["connections"]);
@@ -20,7 +21,7 @@ export const useManageSubmission = (connectionId: number) => {
 
   const { mutate: updateSubmission } = useMutation({
     mutationKey: "updateSubmission",
-    mutationFn: connectionRepository.update,
+    mutationFn: repo?.connection.update,
     onSuccess,
     onError,
   });
