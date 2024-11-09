@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 
 import { useAuthInit } from "@/auth/hooks/useAuthInit";
-import { ApiConnection, initializeApiConnection } from "@/common/interface/api";
+import { ApiConnection, initializeApiConnection } from "@/interface/api";
 
 const ApiContext = createContext({} as ApiConnection);
 

@@ -371,7 +371,8 @@
       },
       "somethingWentWrong": {
         "title": "¡Ups!",
-        "text": "Algo salió mal. Por favor, inténtalo de nuevo"
+        "text": "Algo salió mal. Por favor, inténtalo de nuevo",
+        "button": "Intentar otra vez"
       }
     }
   }

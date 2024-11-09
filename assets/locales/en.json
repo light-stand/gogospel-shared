@@ -371,7 +371,8 @@
       },
       "somethingWentWrong": {
         "title": "Oops!",
-        "text": "Something went wrong. Please try again later."
+        "text": "Something went wrong. Please try again later.",
+        "button": "Try again"
       }
     }
   }
