@@ -55,6 +55,14 @@
         "image": "Una foto",
         "interests": "Mis intereses",
         "edit": "Editar perfil"
+      },
+      "welcome": {
+        "title": "¡Bienvenido!",
+        "text": "Completa tu perfil para comenzar a disfrutar de todas las funciones de la aplicación. Estamos emocionados de ayudarte a conectar con otros ministerios y voluntarios, y juntos fortalecer nuestra comunidad. ¡Que esta experiencia sea enriquecedora y llena de bendiciones!"
+      },
+      "finish": {
+        "title": "¡Perfil completo!",
+        "text": "Tu perfil está completo. Ahora puedes comenzar a conectarte con otros ministerios y voluntarios, crear misiones y mucho más. ¡Bienvenido a GoGospel!"
       }
     },
     "mission": {
@@ -320,7 +328,8 @@
       "later": "Más tarde",
       "done": "Listo",
       "send": "Enviar",
-      "delete": "Eliminar"
+      "delete": "Eliminar",
+      "back": "Volver"
     },
     "media": {
       "launchCamera": "Abrir cámara",

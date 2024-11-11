@@ -55,6 +55,14 @@
         "image": "A Photo",
         "interests": "My Interests",
         "edit": "Edit Profile"
+      },
+      "welcome": {
+        "title": "Welcome to GoGospel!",
+        "text": "Complete your profile to start enjoying all the features of the application. We are excited to help you connect with other ministries and volunteers, and together strengthen our community. May this experience be enriching and full of blessings!"
+      },
+      "finish": {
+        "title": "Profile completed!",
+        "text": "Your profile is now complete. You can now start connecting with other ministries and volunteers, creating missions, and much more. Welcome to GoGospel!"
       }
     },
     "mission": {
@@ -320,7 +328,8 @@
       "later": "Later",
       "done": "Done",
       "send": "Send",
-      "delete": "Delete"
+      "delete": "Delete",
+      "back": "Back"
     },
     "media": {
       "launchCamera": "Launch Camera",
