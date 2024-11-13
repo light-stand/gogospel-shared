@@ -1,4 +1,3 @@
-import { useRouter } from "expo-router";
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -11,8 +10,11 @@ import { MinistryType } from "@/user/domain/MinistryType";
 import { UserProfile } from "@/user/domain/User";
 import { useApi } from "@/common/context/ApiContext";
 
-export const useProfiling = () => {
-  const router = useRouter();
+interface Router {
+  push: (url: string) => void;
+}
+
+export const useProfiling = (router: Router) => {
   const { user } = useUserStore();
   const { session } = useAuthStore();
   const queryClient = useQueryClient();
@@ -20,7 +22,7 @@ export const useProfiling = () => {
 
   const form = useForm<ProfilingFields>({
     resolver: zodResolver(profilingSchema),
-    mode: "onBlur",
+    mode: "onChange",
   });
 
   const { getValues } = form;

@@ -21,7 +21,7 @@ export const useExploreMissions = (location = { lat: 0, long: 0 }) => {
 
   const filterValues = filters.getValues();
 
-  const { data: missions } = useQuery({
+  const { data: missions, refetch } = useQuery({
     queryKey: ["missions", { ...filterValues, ...location }],
     queryFn: () => repo?.mission.exploreMissions({ ...filterValues, ...location }),
   });
@@ -32,5 +32,5 @@ export const useExploreMissions = (location = { lat: 0, long: 0 }) => {
     if (!mission && missions) setFocused(missions?.[Math.floor(missions.length - 1)]?.id || 0);
   }, [missions, mission, focused]);
 
-  return { focused, setFocused, missions, filters, mission };
+  return { focused, setFocused, missions, filters, mission, refetch };
 };

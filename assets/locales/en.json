@@ -40,7 +40,9 @@
           "error": "The ministry type is required"
         },
         "image": {
-          "error": "This field is required"
+          "label": "Upload a photo",
+          "error": "This field is required",
+          "helper": "Add a profile picture that represents you, your ministry, or your organization. Whether it’s a personal photo or an image that reflects your mission, this helps others recognize and connect with you easily."
         },
         "interests": {
           "label": "My Interests",
@@ -128,7 +130,7 @@
         "favorite": "Favorite",
         "give": "Give"
       },
-      "type": {
+      "types": {
         "categories": {
           "mission": "Mission",
           "justice": "Justice",

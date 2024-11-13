@@ -40,7 +40,9 @@
           "error": "El tipo de ministerio es requerido"
         },
         "image": {
-          "error": "Este campo es requerido"
+          "label": "Selecciona una foto",
+          "error": "Este campo es requerido",
+          "helper": "Agrega una foto de perfil que te represente a ti, a tu ministerio o a tu organización. Ya sea una foto personal o una imagen que refleje tu misión, esto ayuda a que otros te reconozcan y se conecten contigo fácilmente."
         },
         "interests": {
           "label": "Mis intereses",
