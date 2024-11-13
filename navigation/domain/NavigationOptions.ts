@@ -19,7 +19,7 @@ export const navigationOptions = [
   },
   {
     title: "screen.profile",
-    url: "/profile",
+    url: "/my-profile",
     icon: "account-outline",
     activeIcon: "account",
   },
