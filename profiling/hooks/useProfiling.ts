@@ -10,11 +10,11 @@ import { MinistryType } from "@/user/domain/MinistryType";
 import { UserProfile } from "@/user/domain/User";
 import { useApi } from "@/common/context/ApiContext";
 
-interface Router {
-  push: (url: string) => void;
+interface UseProfilingParams {
+  onSuccess: () => void;
 }
 
-export const useProfiling = (router: Router) => {
+export const useProfiling = ({ onSuccess: successCallback }: UseProfilingParams) => {
   const { user } = useUserStore();
   const { session } = useAuthStore();
   const queryClient = useQueryClient();
@@ -29,7 +29,7 @@ export const useProfiling = (router: Router) => {
 
   const onSuccess = (data: UserProfile) => {
     queryClient.invalidateQueries(["profile", user.id]);
-    router.push("/(main)");
+    successCallback();
   };
 
   const { mutate: createProfile } = useMutation(repo?.userProfile.create, {
