@@ -29,6 +29,7 @@ export const getProfileOptions = (user?: UserProfile): ProfileOptions => [
         icon: "bell",
         label: "user.profile.options.notification",
         href: "/settings",
+        disabled: true,
       },
       !user?.is_verified && {
         icon: "lock-check-outline",
