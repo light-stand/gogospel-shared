@@ -80,7 +80,7 @@
         },
         "helper": {
           "categories": "Select one or more categories that best describe your mission",
-          "start": "Hello {{ministry}}, thank you for being part of GoGospel! You will now be guided through the steps to create your own mission, to which missionaries can join.",
+          "start": "Hello {ministry}, thank you for being part of GoGospel! You will now be guided through the steps to create your own mission, to which volunteers and missionaries can collaborate. Let's get started!",
           "duration": "When does your mission start and how long will it last?",
           "location": "Select the location where your mission will take place",
           "image": "Add an image that represents your mission. It is optional, but recommended. You can change it later if you wish.",
@@ -99,7 +99,8 @@
         },
         "placeholder": {
           "title": "E.g. Volunteer for a summer camp",
-          "description": "E.g. We need volunteers for a summer camp in Valencia. The mission will last for 2 weeks and will take place in the local community."
+          "description": "E.g. We need volunteers for a summer camp in Valencia. The mission will last for 2 weeks and will take place in the local community.",
+          "startDate": "Select a date"
         },
         "error": {
           "title": "The title is invalid",
@@ -183,7 +184,7 @@
           "title": "Filters",
           "interests": "Interests",
           "ministryType": "Ministry type",
-          "selected": "{{interests}} selected",
+          "selected": "{interests} selected",
           "distance": "Distance",
           "unlimited": "Unlimited"
         }
@@ -222,8 +223,8 @@
     },
     "connections": {
       "submission": {
-        "title": "Do you want to join {{name}}?",
-        "text": "{{ministry}} will receive a notification and will be able to accept or reject your request. You can write a message to {{ministry}} introducing yourself and explaining why you would like to join their mission.",
+        "title": "Do you want to join {name}?",
+        "text": "{ministry} will receive a notification and will be able to accept or reject your request. You can write a message to {ministry} introducing yourself and explaining why you would like to join their mission.",
         "errors": {
           "message": "The message is required and must be at least 40 characters long",
           "alreadySent": "You have already sent a request to this mission",
@@ -253,9 +254,10 @@
     "maps": {
       "picker": {
         "helper": "Search for the location of your mission",
-        "confirm": "Confim"
+        "confirm": "Confim",
+        "search": "Search..."
       },
-      "distance": "{{distance}} km from you"
+      "distance": "{distance} km from you"
     },
     "user": {
       "profile": {
@@ -297,7 +299,7 @@
       },
       "creation": {
         "title": "Add Feedback",
-        "text": "Write a feedback for {{name}}. This will be visible to everyone, so make sure it is positive and constructive.",
+        "text": "Write a feedback for {name}. This will be visible to everyone, so make sure it is positive and constructive.",
         "fields": {
           "title": "Title",
           "description": "Description"

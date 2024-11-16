@@ -80,7 +80,7 @@
         },
         "helper": {
           "categories": "Selecciona una o más categorías que mejor describan tu misión",
-          "start": "¡Hola {{ministry}}, gracias por ser parte de GoGospel! Ahora será guiado por los pasos para que puedas crear tu una misión, a la cual misioneros podrán unirse.",
+          "start": "¡Hola {ministry}, gracias por ser parte de GoGospel! Ahora será guiado por los pasos para que puedas crear tu una misión, a la cual voluntarios y misioneros podrán colaborar. ¡Vamos a empezar!",
           "duration": "¿Cuándo empieza y cuánto durará tu misión?",
           "location": "Selecciona la ubicación donde se llevará a cabo tu misión",
           "image": "Agrega una imágen que represente tu misión. Es opcional, pero recomendado. Puedes cambiarla más tarde si lo deseas.",
@@ -99,7 +99,8 @@
         },
         "placeholder": {
           "title": "Ej: Voluntario para un campamento de verano",
-          "description": "Ej: Necesitamos voluntarios para un campamento de verano en Valencia. La misión durará 2 semanas y se llevará a cabo en la comunidad local."
+          "description": "Ej: Necesitamos voluntarios para un campamento de verano en Valencia. La misión durará 2 semanas y se llevará a cabo en la comunidad local.",
+          "startDate": "Selecciona una fecha"
         },
         "error": {
           "title": "El títutlo es inválido",
@@ -183,7 +184,7 @@
           "title": "Filtros",
           "interests": "Intereses",
           "ministryType": "Tipo de ministerio",
-          "selected": "{{interests}} seleccionados",
+          "selected": "{interests} seleccionados",
           "distance": "Distancia",
           "unlimited": "Ilimitado"
         }
@@ -222,8 +223,8 @@
     },
     "connections": {
       "submission": {
-        "title": "¿Quieres apuntarte a {{name}}?",
-        "text": "{{ministry}} recibira una notificación y podrá aceptar o rechazar tu solicitud.\nPuedes escribir un mensaje para {{ministry}} presentandote y explicando por qué te gustaría unirte a su misión.",
+        "title": "¿Quieres apuntarte a {name}?",
+        "text": "{ministry} recibira una notificación y podrá aceptar o rechazar tu solicitud.\nPuedes escribir un mensaje para {ministry} presentandote y explicando por qué te gustaría unirte a su misión.",
         "errors": {
           "message": "El mensaje es requerido y debe tener al menos 40 caracteres",
           "alreadySent": "Ya has enviado una solicitud a esta misión",
@@ -253,9 +254,10 @@
     "maps": {
       "picker": {
         "helper": "Busca la ubicación de tu misión",
-        "confirm": "Confirmar"
+        "confirm": "Confirmar",
+        "search": "Buscar..."
       },
-      "distance": "A {{distance}} km de ti"
+      "distance": "A {distance} km de ti"
     },
     "user": {
       "profile": {
@@ -297,7 +299,7 @@
       },
       "creation": {
         "title": "Añadir feedback",
-        "text": "Escribe un feedback para {{name}}. Tu feedback será visible para otros usuarios, así que asegúrate de que sea positivo y constructivo.",
+        "text": "Escribe un feedback para {name}. Tu feedback será visible para otros usuarios, así que asegúrate de que sea positivo y constructivo.",
         "fields": {
           "title": "Título",
           "description": "Descripción"
