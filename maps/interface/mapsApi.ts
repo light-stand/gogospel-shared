@@ -21,7 +21,7 @@ export const reverseGeocode = async (coords: LatLng) => {
   return response.data.results[0] as ReverseGeocodeResponse;
 };
 
-export const autoComplete = async (input: string, coords: LatLng) => {
+export const autoComplete = async (input: string) => {
   if (!input || input.length < 3) return [];
   const response = await axios.get("https://maps.googleapis.com/maps/api/place/autocomplete/json", {
     params: { key, input },
