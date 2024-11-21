@@ -1,7 +1,9 @@
 import { SupabaseClient } from "@supabase/supabase-js";
-import { Repository } from "@/interface/repository";
+import { Repository, SupabaseFilter } from "@/interface/repository";
+
 import { Mission, MissionViewInput } from "../domain/Mission";
 import { ExploreFiltersInput } from "../domain/ExploreFilters";
+import { MissionListTypes } from "../domain/MissionListType";
 
 export class MissionRepository extends Repository<Mission> {
   constructor(client: SupabaseClient) {
@@ -26,5 +28,30 @@ export class MissionRepository extends Repository<Mission> {
     }
 
     return data as Mission[];
+  };
+
+  list = async (mode: MissionListTypes, userId: string) => {
+    const listMissionFilters = {
+      myMissions: [
+        ["active", "eq", true],
+        ["created_by", "eq", userId],
+      ],
+      favorites: [
+        ["approved", "eq", true],
+        ["active", "eq", true],
+        ["favorite.user_id", "eq", userId],
+      ],
+      involved: [
+        ["approved", "eq", true],
+        ["active", "eq", true],
+        ["connection.user1_id", "eq", userId],
+      ],
+    }[mode] as SupabaseFilter | SupabaseFilter[];
+
+    const select = `*, user_profile!created_by(name, images),${
+      mode === "involved" ? "connection!inner(*)" : "connection(*)"
+    }, ${mode === "favorites" ? "favorite!inner(*)" : "favorite(*)"}`;
+
+    return await this.get(listMissionFilters, select);
   };
 }
