@@ -1,4 +1,4 @@
-import { MaterialIconType } from "@/components/ui/foundation/Icon/Icon";
+import { MaterialIconType } from "@/components/ui/foundation/Icon";
 import colors from "tailwindcss/colors";
 import { t } from "i18next";
 

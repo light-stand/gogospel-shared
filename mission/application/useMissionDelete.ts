@@ -1,11 +1,12 @@
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { useMutation } from "react-query";
 
-import { missionRepository } from "../interface/missionRepository";
 import { queryClient } from "@/interface/queryClient";
+import { useApi } from "@/common/context/ApiContext";
 
 export const useMissionDelete = () => {
   const id = parseInt(useLocalSearchParams().id as string);
+  const { repo } = useApi();
   const router = useRouter();
 
   const onSuccess = () => {
@@ -13,7 +14,7 @@ export const useMissionDelete = () => {
     router.push("/missions");
   };
 
-  const { mutateAsync: updateMission, isLoading } = useMutation(missionRepository.update, {
+  const { mutateAsync: updateMission, isLoading } = useMutation(repo?.mission.update, {
     onSuccess,
   });
 

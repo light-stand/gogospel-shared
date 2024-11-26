@@ -6,14 +6,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 
 import { MissionCreationFields, missionCreationSchema } from "@/mission/domain/MissionCreationForm";
 import { useUserStore } from "@/user/store/useUserStore";
-import { missionRepository } from "../interface/missionRepository";
 import { useMissionDetails } from "./useMissionDetails";
 import { queryClient } from "@/interface/queryClient";
 import { parseDuration } from "../utils/parser";
+import { useApi } from "@/common/context/ApiContext";
 
 export const useMissionEdit = () => {
   const id = parseInt(useLocalSearchParams().id as string);
   const router = useRouter();
+  const { repo } = useApi();
   const { user } = useUserStore();
   const { mission } = useMissionDetails(id);
 
@@ -45,7 +46,7 @@ export const useMissionEdit = () => {
     router.push("/missions");
   };
 
-  const { mutateAsync: updateMission, isLoading } = useMutation(missionRepository.update, {
+  const { mutateAsync: updateMission, isLoading } = useMutation(repo?.mission.update, {
     onSuccess,
   });
 

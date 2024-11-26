@@ -1,7 +1,18 @@
-import { ProfileOptions } from "../components/ProfileOptions";
 import { UserProfile } from "./User";
+import { MaterialIconType } from "@/components/ui";
 
-export const getProfileOptions = (user?: UserProfile): ProfileOptions => [
+export type ProfileOption = {
+  label?: string;
+  items: {
+    icon: MaterialIconType;
+    label: string;
+    href?: string;
+    action?: "logout" | "openVerificationCode";
+    disabled?: boolean;
+  }[];
+}[];
+
+export const getProfileOptions = (user?: UserProfile): ProfileOption => [
   {
     label: "user.profile.options.profile",
     items: [
@@ -29,6 +40,7 @@ export const getProfileOptions = (user?: UserProfile): ProfileOptions => [
         icon: "bell",
         label: "user.profile.options.notification",
         href: "/settings",
+        disabled: true,
       },
       !user?.is_verified && {
         icon: "lock-check-outline",
@@ -40,11 +52,11 @@ export const getProfileOptions = (user?: UserProfile): ProfileOptions => [
         label: "user.profile.options.logout",
         action: "logout",
       },
-    ].filter(Boolean) as ProfileOptions[number]["items"],
+    ].filter(Boolean) as ProfileOption[number]["items"],
   },
 ];
 
-export const getPublicProfileOptions = (user?: UserProfile): ProfileOptions => [
+export const getPublicProfileOptions = (user?: UserProfile): ProfileOption => [
   {
     items: [
       {

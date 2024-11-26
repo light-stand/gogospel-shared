@@ -1,13 +1,17 @@
 import { useMutation } from "react-query";
-import { connectionRepository } from "../interface/connectionRepository";
-import { Alert } from "react-native";
-import { useTranslation } from "react-i18next";
 import { queryClient } from "@/interface/queryClient";
-import { SupabaseError } from "@/interface/supabase";
+import { SupabaseError } from "@/common/interface/api";
 import { ConnectionStatus } from "../domain/Connection";
+import { useApi } from "@/common/context/ApiContext";
 
-export const useManageSubmission = (connectionId: number) => {
-  const { t } = useTranslation();
+interface ManageSubmissionParams {
+  connectionId: number;
+  openAlert: (message: string, text?: string, onConfirm?: () => void) => void | Promise<void>;
+  t: (path: string) => string;
+}
+
+export const useManageSubmission = ({ connectionId, openAlert, t }: ManageSubmissionParams) => {
+  const { repo } = useApi();
 
   const onSuccess = () => {
     queryClient.invalidateQueries(["connections"]);
@@ -15,20 +19,20 @@ export const useManageSubmission = (connectionId: number) => {
 
   const onError = (error: any) => {
     const key = error.code === SupabaseError.Duplicated ? "alreadySent" : "unknown";
-    Alert.alert(t(`connections.submission.errors.${key}`));
+    openAlert(t(`connections.submission.errors.${key}`));
   };
 
-  const { mutate: updateSubmission } = useMutation({
+  const { mutateAsync: updateSubmission } = useMutation({
     mutationKey: "updateSubmission",
-    mutationFn: connectionRepository.update,
+    mutationFn: repo?.connection.update,
     onSuccess,
     onError,
   });
 
   const manageSubmission = async (status: ConnectionStatus) => {
-    if (!connectionId) return Alert.alert(t("mission.errors.notFound"));
+    if (!connectionId) return openAlert(t("mission.errors.notFound"));
 
-    updateSubmission({
+    await updateSubmission({
       id: connectionId,
       status,
     });
@@ -37,13 +41,14 @@ export const useManageSubmission = (connectionId: number) => {
   };
 
   const onSubmissionManage = (status: ConnectionStatus) => () => {
-    Alert.alert(
+    openAlert(
       t(`connections.submission.manage.popup.title.${status}`),
       t(`connections.submission.manage.popup.text.${status}`),
-      [
-        { text: t("action.cancel"), style: "cancel" },
-        { text: t("action.next"), onPress: () => manageSubmission(status) },
-      ]
+      () => manageSubmission(status)
+      // [
+      //   { text: t("action.cancel"), style: "cancel" },
+      //   { text: t("action.next"), onPress:  },
+      // ]
     );
   };
 

@@ -39,6 +39,7 @@ export const missionCreationSchema = z
     duration: z
       .number()
       .min(1, t(`${langPrefix}.duration`))
+      .max(50, t(`${langPrefix}.duration`))
       .optional(),
     durationMultiplier: z.number({ message: t(`${langPrefix}.durationMultiplier`) }),
     noDuration: z.boolean().optional(),

@@ -1,34 +1,38 @@
-import { useRouter } from "expo-router";
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
+
 import { ProfilingFields, profilingSchema } from "@/profiling/domain/ProfilingForm";
 import { useAuthStore } from "@/auth/store/useAuthStore";
 import { useUserStore } from "@/user/store/useUserStore";
 import { MissionType } from "@/mission/domain/MissionType";
 import { MinistryType } from "@/user/domain/MinistryType";
-import { userProfileRepository } from "@/user/interface/userProfileRepository";
 import { UserProfile } from "@/user/domain/User";
+import { useApi } from "@/common/context/ApiContext";
 
-export const useProfiling = () => {
-  const router = useRouter();
+interface UseProfilingParams {
+  onSuccess: () => void;
+}
+
+export const useProfiling = ({ onSuccess: successCallback }: UseProfilingParams) => {
   const { user } = useUserStore();
   const { session } = useAuthStore();
   const queryClient = useQueryClient();
+  const { repo } = useApi();
 
   const form = useForm<ProfilingFields>({
     resolver: zodResolver(profilingSchema),
-    mode: "onBlur",
+    mode: "onChange",
   });
 
   const { getValues } = form;
 
   const onSuccess = (data: UserProfile) => {
     queryClient.invalidateQueries(["profile", user.id]);
-    router.push("/(main)");
+    successCallback();
   };
 
-  const { mutate: createProfile } = useMutation(userProfileRepository.create, {
+  const { mutate: createProfile } = useMutation(repo?.userProfile.create, {
     onSuccess,
   });
 

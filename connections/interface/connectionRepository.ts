@@ -1,10 +1,10 @@
-import { Repository, SupabaseFilter } from "@/interface/repository";
+import { SupabaseClient } from "@supabase/supabase-js";
+import { Repository } from "@/interface/repository";
 import { Connection, ConnectionStatus } from "../domain/Connection";
-import { supabase } from "@/interface/supabase";
 
-class ConnectionRepository extends Repository<Connection> {
-  constructor() {
-    super("connection", supabase);
+export class ConnectionRepository extends Repository<Connection> {
+  constructor(client: SupabaseClient) {
+    super("connection", client);
   }
 
   getForUser = async (userId?: string): Promise<Connection[]> => {
@@ -27,5 +27,3 @@ class ConnectionRepository extends Repository<Connection> {
     return data as unknown as Connection[];
   };
 }
-
-export const connectionRepository = new ConnectionRepository();

@@ -1,5 +1,10 @@
+import { SupabaseClient } from "@supabase/supabase-js";
+
 import { Repository } from "@/interface/repository";
 import { Feedback } from "../domain/Feedback";
-import { supabase } from "@/interface/supabase";
 
-export const feedbackRepository = new Repository<Feedback>("feedback", supabase);
+export class FeedbackRepository extends Repository<Feedback> {
+  constructor(client: SupabaseClient) {
+    super("feedback", client);
+  }
+}

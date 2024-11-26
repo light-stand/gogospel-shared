@@ -6,14 +6,15 @@ import { useUserStore } from "@/user/store/useUserStore";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { profilingSchema } from "@/profiling/domain/ProfilingForm";
 import { UserProfile } from "../domain/User";
-import { userProfileRepository } from "../interface/userProfileRepository";
 import { useUserProfile } from "./useUserProfile";
+import { useApi } from "@/common/context/ApiContext";
 
 export const useEditProfile = () => {
   const { user } = useUserStore();
   const queryClient = useQueryClient();
   const router = useRouter();
   const profile = useUserProfile();
+  const { repo } = useApi();
 
   const { name, description, images, interests, type } = profile as UserProfile;
 
@@ -35,7 +36,7 @@ export const useEditProfile = () => {
     form.reset();
   };
 
-  const { mutate: updateProfile } = useMutation(userProfileRepository.update, {
+  const { mutate: updateProfile } = useMutation(repo?.userProfile.update, {
     onSuccess,
   });
 

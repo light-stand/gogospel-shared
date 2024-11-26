@@ -1,20 +1,21 @@
-import { supabase } from "@/interface/supabase";
-import { t } from "i18next";
+import { ApiConnection } from "@/common/interface/api";
 
-export const login = async (data: { email: string; password: string }) => {
-  const response = await supabase.auth.signInWithPassword(data);
-  if (response.error) throw response.error;
-  return response.data;
-};
+export const login =
+  (client: ApiConnection["client"]) => async (data: { email: string; password: string }) => {
+    const response = await client.auth.signInWithPassword(data);
+    if (response.error) throw response.error;
+    return response.data;
+  };
 
-export const signup = async (data: { email: string; password: string }) => {
-  const response = await supabase.auth.signUp(data);
-  if (response.error) throw response.error;
-  return response.data;
-};
+export const signup =
+  (client: ApiConnection["client"]) => async (data: { email: string; password: string }) => {
+    const response = await client.auth.signUp(data);
+    if (response.error) throw response.error;
+    return response.data;
+  };
 
-export const logout = async () => {
-  const response = await supabase.auth.signOut();
+export const logout = (client: ApiConnection["client"]) => async () => {
+  const response = await client.auth.signOut();
   if (response.error) throw response.error;
   return response;
 };

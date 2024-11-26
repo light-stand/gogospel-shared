@@ -1,17 +1,20 @@
 import { useEffect } from "react";
-import { useRouter } from "expo-router";
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { MissionCreationFields, missionCreationSchema } from "@/mission/domain/MissionCreationForm";
 import { useUserStore } from "@/user/store/useUserStore";
-import { missionRepository } from "../interface/missionRepository";
+import { useApi } from "@/common/context/ApiContext";
 
-export const useMissionCreation = () => {
-  const router = useRouter();
+interface useMissionCreationParams {
+  onSuccess: () => void;
+}
+
+export const useMissionCreation = ({ onSuccess: successCallback }: useMissionCreationParams) => {
   const queryClient = useQueryClient();
   const { user } = useUserStore();
+  const { repo } = useApi();
 
   const form = useForm<MissionCreationFields>({
     resolver: zodResolver(missionCreationSchema),
@@ -25,10 +28,10 @@ export const useMissionCreation = () => {
 
   const onSuccess = () => {
     queryClient.invalidateQueries(["listMissions", "myMissions"]);
-    router.push("/(main)/missions");
+    successCallback();
   };
 
-  const { mutate: createMission } = useMutation(missionRepository.create, { onSuccess });
+  const { mutate: createMission } = useMutation(repo?.mission.create, { onSuccess });
 
   const onSubmit = () => {
     const values = getValues();

@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { useUserStore } from "@/user/store/useUserStore";
-import { userProfileRepository } from "../interface/userProfileRepository";
 import { UserProfile } from "../domain/User";
+import { useApi } from "@/common/context/ApiContext";
 
 const emptyProfile: UserProfile = {
   id: 0,
@@ -17,12 +17,13 @@ const emptyProfile: UserProfile = {
 };
 
 export const useUserProfile = (userId?: string) => {
+  const { repo } = useApi();
   const { user } = useUserStore();
   const id = userId || user.id;
 
   const { data: profiles } = useQuery({
     queryKey: ["profile", id],
-    queryFn: () => userProfileRepository.get(["user_id", "eq", id]),
+    queryFn: () => repo?.userProfile.get(["user_id", "eq", id]),
   });
 
   return profiles?.[0] || emptyProfile;
