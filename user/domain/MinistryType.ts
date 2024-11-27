@@ -1,4 +1,4 @@
-import { MaterialIconType } from "@/components/ui/foundation/Icon/Icon";
+import { MaterialIconType } from "@/components/ui";
 import colors from "tailwindcss/colors";
 
 type CategoryValues =
