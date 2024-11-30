@@ -351,6 +351,10 @@
       "missions": "Misiones"
     },
     "noResults": {
+      "missions": {
+        "title": "No hemos encontrado misiones",
+        "text": "No hemos encontrado misiones que coincidan con tus criterios de búsqueda. Intenta de nuevo con diferentes filtros."
+      },
       "myMissions": {
         "title": "Aún no has creado misiones",
         "text": "Crea una misión ahora!",

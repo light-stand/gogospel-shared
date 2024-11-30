@@ -351,6 +351,10 @@
       "missions": "Missions"
     },
     "noResults": {
+      "missions": {
+        "title": "No missions found",
+        "text": "There are no missions that match your search criteria. Try again with different filters."
+      },
       "myMissions": {
         "title": "No missions yet",
         "text": "You haven't created any missions yet. Create one now!",
