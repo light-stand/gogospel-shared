@@ -22,7 +22,7 @@
         "register": "Register"
       },
       "messages": {
-        "dontHaveAccount": "Don't have an account? Register"
+        "dontHaveAccount": "Don't have an account?"
       }
     },
     "profiling": {
