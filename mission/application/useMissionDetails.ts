@@ -11,7 +11,7 @@ export const useMissionDetails = (
 ) => {
   const { user } = useUserStore();
   const queryClient = useQueryClient();
-  const { repo } = useApi();
+  const { client, repo } = useApi();
 
   const { data: mission, isLoading } = useQuery({
     queryKey: ["mission", id],
@@ -20,6 +20,7 @@ export const useMissionDetails = (
         id,
         "*, user_profile!created_by(user_id, name, images), favorite(user_id)"
       ),
+    enabled: !!client,
   });
 
   const getMissionDistance = async () => {

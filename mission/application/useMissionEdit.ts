@@ -22,21 +22,7 @@ export const useMissionEdit = ({ id, onSuccess }: UseMissionEditParams) => {
   const form = useForm<MissionCreationFields>({
     resolver: zodResolver(missionCreationSchema),
     mode: "onChange",
-    defaultValues: mission && {
-      ...mission,
-      duration: parseDuration(mission.duration)[0],
-      image: mission.images ? mission.images[0] : "",
-      startDate: new Date(mission.start_date || 0),
-      durationMultiplier: parseDuration(mission.duration)[1],
-      location: {
-        latitude: mission.lat || 0,
-        longitude: mission.long || 0,
-        locationName: mission.location_name || "",
-        country: mission.country || "",
-      },
-      noDuration: !mission.duration,
-      noStartDate: !mission.start_date,
-    },
+    // defaultValues: Handled on the useEffect hook
   });
 
   const { noDuration, noStartDate } = form.getValues();
@@ -80,6 +66,27 @@ export const useMissionEdit = ({ id, onSuccess }: UseMissionEditParams) => {
     if (!noStartDate) return;
     form.setValue("startDate", new Date());
   }, [noStartDate]);
+
+  useEffect(() => {
+    // Handle the case where the mission is not yet loaded
+    if (!mission || form.getValues().title !== undefined) return;
+
+    form.reset({
+      ...mission,
+      duration: parseDuration(mission.duration)[0],
+      image: mission.images ? mission.images[0] : "",
+      startDate: new Date(mission.start_date || 0),
+      durationMultiplier: parseDuration(mission.duration)[1],
+      location: {
+        latitude: mission.lat || 0,
+        longitude: mission.long || 0,
+        locationName: mission.location_name || "",
+        country: mission.country || "",
+      },
+      noDuration: !mission.duration,
+      noStartDate: !mission.start_date,
+    });
+  }, [mission, form]);
 
   return { form, onSubmit, isLoading };
 };

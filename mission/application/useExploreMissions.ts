@@ -12,7 +12,7 @@ export const defaultFilters: ExploreFilters = {
 };
 
 export const useExploreMissions = (location = { lat: 0, long: 0 }) => {
-  const { repo } = useApi();
+  const { client, repo } = useApi();
   const [focused, setFocused] = useState(0);
   const filters = useForm<ExploreFilters>({
     resolver: zodResolver(exploreFiltersSchema),
@@ -24,6 +24,7 @@ export const useExploreMissions = (location = { lat: 0, long: 0 }) => {
   const { data: missions, refetch } = useQuery({
     queryKey: ["missions", { ...filterValues, ...location }],
     queryFn: () => repo?.mission.exploreMissions({ ...filterValues, ...location }),
+    enabled: !!client,
   });
 
   const mission = useMemo(() => missions?.find((m) => m.id === focused), [missions, focused]);
