@@ -22,7 +22,8 @@
         "register": "Registrarse"
       },
       "messages": {
-        "dontHaveAccount": "¿No tienes una cuenta?"
+        "dontHaveAccount": "¿No tienes una cuenta?",
+        "googleSignIn": "Continuar con Google"
       }
     },
     "profiling": {
