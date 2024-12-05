@@ -1,9 +1,10 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "react-query";
 
 import { useUserStore } from "@/user/store/useUserStore";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { profilingSchema } from "@/profiling/domain/ProfilingForm";
+import { ProfilingFields, profilingSchema } from "@/profiling/domain/ProfilingForm";
 import { useApi } from "@/common/context/ApiContext";
 import { useUserProfile } from "@/user/application/useUserProfile";
 import { UserProfile } from "@/user/domain/User";
@@ -16,16 +17,10 @@ export const useEditProfile = ({ onSuccess: onSuccessCallback }: { onSuccess: Vo
 
   const { name, description, images, interests, type } = profile as UserProfile;
 
-  const form = useForm({
+  const form = useForm<ProfilingFields>({
     resolver: zodResolver(profilingSchema),
     mode: "onBlur",
-    defaultValues: profile && {
-      name,
-      bio: description,
-      picture: images[0],
-      interests,
-      ministryType: [type],
-    },
+    // defaultValues: handled in useEffect
   });
 
   const onSuccess = () => {
@@ -48,6 +43,17 @@ export const useEditProfile = ({ onSuccess: onSuccessCallback }: { onSuccess: Vo
       interests: data.interests,
     });
   });
+
+  useEffect(() => {
+    if (!profile) return;
+    form.reset({
+      name,
+      bio: description,
+      picture: images[0],
+      interests,
+      ministryType: [type],
+    });
+  }, [profile, form]);
 
   return { form, onSubmit };
 };
