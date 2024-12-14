@@ -250,6 +250,10 @@
           "delete": "Eliminar",
           "addFeedback": "Añadir feedback"
         }
+      },
+      "chat": {
+        "typeMessage": "Escribe un mensaje...",
+        "send": "Enviar"
       }
     },
     "maps": {
@@ -380,6 +384,10 @@
       "feedbackGiven": {
         "title": "Este usuario aún no ha dado feedback",
         "text": "Una vez que de feedback, aparecerá aquí"
+      },
+      "selectChat": {
+        "title": "Selecciona un chat",
+        "text": "Selecciona uno de los usuarios para comenzar la conversación"
       }
     },
     "alerts": {

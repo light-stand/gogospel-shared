@@ -250,6 +250,10 @@
           "delete": "Delete",
           "addFeedback": "Add feedback"
         }
+      },
+      "chat": {
+        "typeMessage": "Type a message...",
+        "send": "Send"
       }
     },
     "maps": {
@@ -380,6 +384,10 @@
       "feedbackGiven": {
         "title": "No feedback yet",
         "text": "Once the user gives feedback, it will appear here"
+      },
+      "selectChat": {
+        "title": "No chat selected",
+        "text": "Select a chat to start messaging"
       }
     },
     "alerts": {
