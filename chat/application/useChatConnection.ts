@@ -1,17 +1,17 @@
 import { useEffect } from "react";
-import { subscribe, unsubscribe, sendMessage, getMessages } from "../interface/chatApi";
-import { RealtimePostgresInsertPayload } from "@supabase/supabase-js";
+import { RealtimeChannel, RealtimePostgresInsertPayload } from "@supabase/supabase-js";
 import { useMutation, useQuery, useQueryClient } from "react-query";
 import { Updater } from "react-query/types/core/utils";
 
 import { useUserStore } from "@/user/store/useUserStore";
 import { useApi } from "@/common/context/ApiContext";
 import { Message } from "../domain/Message";
+import { subscribe, unsubscribe, sendMessage, getMessages } from "../interface/chatApi";
 
-export const useChatConnection = (channelId: number) => {
+export const useChatConnection = (channelId: number, onError?: () => void) => {
   const queryClient = useQueryClient();
   const { user } = useUserStore();
-  const { client } = useApi();
+  const { client, repo } = useApi();
 
   const setMessages = (setter: Updater<Message[] | undefined, Message[]>) =>
     queryClient.setQueryData(["messages", channelId], setter);
@@ -19,11 +19,19 @@ export const useChatConnection = (channelId: number) => {
   const { data: messages, isLoading } = useQuery({
     queryKey: ["messages", channelId],
     queryFn: () => getMessages(client)(channelId),
+    enabled: !!client,
     initialData: [],
   });
 
+  const { data: connection, isLoading: isLoadingConnection } = useQuery({
+    queryKey: ["connection", channelId],
+    queryFn: () => repo.connection.getById(channelId),
+    enabled: !!client,
+    onError,
+  });
+
   const { mutate: sendMessageMutation } = useMutation({
-    mutationKey: "sendMessage",
+    mutationKey: ["sendMessage"],
     mutationFn: sendMessage(client),
     onSuccess: (data, variables) => {
       // TODO: Check optimization and necesity of this
@@ -52,8 +60,8 @@ export const useChatConnection = (channelId: number) => {
 
   useEffect(() => {
     const channel = subscribe(client)(channelId, user.id as string, onMessage);
-    return () => unsubscribe(client)(channel);
+    return () => unsubscribe(client)(channel as RealtimeChannel);
   }, []);
 
-  return { messages, handleSend, isLoading };
+  return { messages, handleSend, isLoading: isLoading || isLoadingConnection, connection };
 };
