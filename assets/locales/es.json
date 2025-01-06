@@ -19,11 +19,15 @@
       },
       "titles": {
         "login": "Iniciar sesión",
-        "register": "Registrarse"
+        "register": "Registrarse",
+        "forgotPassword": "¿Olvidaste tu contraseña?"
       },
       "messages": {
         "dontHaveAccount": "¿No tienes una cuenta?",
-        "googleSignIn": "Continuar con Google"
+        "forgotPassword": "¿Olvidaste tu contraseña?",
+        "googleSignIn": "Continuar con Google",
+        "forgotPasswordHelper": "Introduce tu dirección de correo electrónico y te enviaremos un enlace para restablecer tu contraseña",
+        "resetPasswordHelper": "Introduce tu nueva contraseña. Después de eso, podrás iniciar sesión con tu nueva contraseña."
       }
     },
     "profiling": {

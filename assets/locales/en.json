@@ -19,11 +19,15 @@
       },
       "titles": {
         "login": "Log In",
-        "register": "Register"
+        "register": "Register",
+        "forgotPassword": "Forgot your password?"
       },
       "messages": {
         "dontHaveAccount": "Don't have an account?",
-        "googleSignIn": "Sign in with Google"
+        "forgotPassword": "Forgot your password?",
+        "googleSignIn": "Sign in with Google",
+        "forgotPasswordHelper": "Enter your email address and we will send you a link to reset your password",
+        "resetPasswordHelper": "Enter your new password. After that, you can log in with your new password."
       }
     },
     "profiling": {
