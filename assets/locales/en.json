@@ -25,9 +25,14 @@
       "messages": {
         "dontHaveAccount": "Don't have an account?",
         "forgotPassword": "Forgot your password?",
-        "googleSignIn": "Sign in with Google",
-        "forgotPasswordHelper": "Enter your email address and we will send you a link to reset your password",
-        "resetPasswordHelper": "Enter your new password. After that, you can log in with your new password."
+        "googleSignIn": "Sign in with Google"
+      },
+      "resetPassword": {
+        "enterEmail": "Enter your email address and we will send you a link to reset your password",
+        "enterNewPassword": "Enter your new password. After that, you can log in with your new password.",
+        "emailSent": "An email has been sent to your inbox with instructions to reset your password.",
+        "loginAgain": "After changing your password, you can log in again.",
+        "success": "Password reset successfully"
       }
     },
     "profiling": {

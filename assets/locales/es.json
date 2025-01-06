@@ -25,9 +25,14 @@
       "messages": {
         "dontHaveAccount": "¿No tienes una cuenta?",
         "forgotPassword": "¿Olvidaste tu contraseña?",
-        "googleSignIn": "Continuar con Google",
-        "forgotPasswordHelper": "Introduce tu dirección de correo electrónico y te enviaremos un enlace para restablecer tu contraseña",
-        "resetPasswordHelper": "Introduce tu nueva contraseña. Después de eso, podrás iniciar sesión con tu nueva contraseña."
+        "googleSignIn": "Continuar con Google"
+      },
+      "resetPassword": {
+        "enterEmail": "Introduce tu dirección de correo electrónico y te enviaremos un enlace para restablecer tu contraseña",
+        "enterNewPassword": "Introduce tu nueva contraseña. Después de eso, podrás iniciar sesión con tu nueva contraseña.",
+        "emailSent": "Se ha enviado un correo electrónico a tu bandeja de entrada con instrucciones para restablecer tu contraseña.",
+        "loginAgain": "Después de cambiar tu contraseña, puedes iniciar sesión de nuevo.",
+        "success": "Contraseña restablecida con éxito"
       }
     },
     "profiling": {
