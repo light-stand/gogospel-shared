@@ -4,7 +4,7 @@ import { MissionType, missionTypes } from "@/mission/domain/MissionType";
 import { ministryTypes, MinistryType } from "@/user/domain/MinistryType";
 
 export const profilingSchema = z.object({
-  name: z.string().min(3, t("profiling.fields.firstName.error")),
+  name: z.string().min(3, t("profiling.fields.name.error")),
   // lastName: z.string().min(3, t("profiling.fields.lastName.error")).optional(),
   bio: z.string().min(60, t("profiling.fields.bio.error")),
   picture: z.string().min(64, t("profiling.fields.image.error")),

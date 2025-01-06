@@ -19,10 +19,21 @@
       },
       "titles": {
         "login": "Iniciar sesión",
-        "register": "Registrarse"
+        "register": "Registrarse",
+        "forgotPassword": "¿Olvidaste tu contraseña?",
+        "resetPassword": "Restablecer contraseña"
       },
       "messages": {
-        "dontHaveAccount": "¿No tienes una cuenta? Registrarse"
+        "dontHaveAccount": "¿No tienes una cuenta?",
+        "forgotPassword": "¿Olvidaste tu contraseña?",
+        "googleSignIn": "Continuar con Google"
+      },
+      "resetPassword": {
+        "enterEmail": "Introduce tu dirección de correo electrónico y te enviaremos un enlace para restablecer tu contraseña",
+        "enterNewPassword": "Introduce tu nueva contraseña. Después de eso, podrás iniciar sesión con tu nueva contraseña.",
+        "emailSent": "Se ha enviado un correo electrónico a tu bandeja de entrada con instrucciones para restablecer tu contraseña.",
+        "loginAgain": "Después de cambiar tu contraseña, puedes iniciar sesión de nuevo.",
+        "success": "Contraseña restablecida con éxito. Si has solicitado desde la aplicación, vuelve a la aplicación para iniciar sesión."
       }
     },
     "profiling": {
@@ -208,6 +219,7 @@
         "ngo": "ONG",
         "ministry": "Ministerio",
         "rehab": "Centro de Rehabilitación",
+        "women": "Mujeres",
         "media": "Medio de Comunicación",
         "mission-agency": "Agencia Misionera",
         "fraternity": "Fraternidad",
@@ -249,6 +261,10 @@
           "delete": "Eliminar",
           "addFeedback": "Añadir feedback"
         }
+      },
+      "chat": {
+        "typeMessage": "Escribe un mensaje...",
+        "send": "Enviar"
       }
     },
     "maps": {
@@ -351,6 +367,10 @@
       "missions": "Misiones"
     },
     "noResults": {
+      "missions": {
+        "title": "No hemos encontrado misiones",
+        "text": "No hemos encontrado misiones que coincidan con tus criterios de búsqueda. Intenta de nuevo con diferentes filtros."
+      },
       "myMissions": {
         "title": "Aún no has creado misiones",
         "text": "Crea una misión ahora!",
@@ -375,6 +395,10 @@
       "feedbackGiven": {
         "title": "Este usuario aún no ha dado feedback",
         "text": "Una vez que de feedback, aparecerá aquí"
+      },
+      "selectChat": {
+        "title": "Selecciona un chat",
+        "text": "Selecciona uno de los usuarios para comenzar la conversación"
       }
     },
     "alerts": {

@@ -28,6 +28,7 @@ export const ministryTypes = {
   ngo: { icon: "charity", color: "purple", category: "organization-community" },
   ministry: { icon: "cross", color: "red", category: "mission-spiritual" },
   rehab: { icon: "hospital", color: "orange", category: "health-wellness" },
+  women: { icon: "face-woman", color: "pink", category: "health-wellness" },
   media: { icon: "radio", color: "amber", category: "media-communication" },
   "mission-agency": { icon: "earth", color: "cyan", category: "mission-spiritual" },
   fraternity: { icon: "account-multiple", color: "pink", category: "organization-community" },

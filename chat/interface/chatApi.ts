@@ -8,8 +8,9 @@ export const subscribe =
     room: string | number,
     userId: string,
     onMessage: (payload: RealtimePostgresInsertPayload<Message>) => void
-  ) =>
-    client
+  ) => {
+    if (!client) return;
+    return client
       .channel(`room:${room}`)
       .on(
         "postgres_changes",
@@ -22,19 +23,23 @@ export const subscribe =
         onMessage
       )
       .subscribe();
+  };
 
 export const unsubscribe = (client: ApiConnection["client"]) => (channel: RealtimeChannel) => {
+  if (!client) return;
   client.removeChannel(channel);
 };
 
 export const sendMessage =
   (client: ApiConnection["client"]) => async (message: Omit<Message, "id">) => {
+    if (!client) return;
     const { data, error } = await client.from<string, Message>("message").insert(message as any);
     if (error) throw error;
   };
 
 export const getMessages =
   (client: ApiConnection["client"]) => async (channelId: string | number) => {
+    if (!client) return [];
     const { data, error } = await client
       .from<string, Message>("message")
       .select("*")
