@@ -20,7 +20,8 @@
       "titles": {
         "login": "Iniciar sesión",
         "register": "Registrarse",
-        "forgotPassword": "¿Olvidaste tu contraseña?"
+        "forgotPassword": "¿Olvidaste tu contraseña?",
+        "resetPassword": "Restablecer contraseña"
       },
       "messages": {
         "dontHaveAccount": "¿No tienes una cuenta?",
@@ -32,7 +33,7 @@
         "enterNewPassword": "Introduce tu nueva contraseña. Después de eso, podrás iniciar sesión con tu nueva contraseña.",
         "emailSent": "Se ha enviado un correo electrónico a tu bandeja de entrada con instrucciones para restablecer tu contraseña.",
         "loginAgain": "Después de cambiar tu contraseña, puedes iniciar sesión de nuevo.",
-        "success": "Contraseña restablecida con éxito"
+        "success": "Contraseña restablecida con éxito. Si has solicitado desde la aplicación, vuelve a la aplicación para iniciar sesión."
       }
     },
     "profiling": {

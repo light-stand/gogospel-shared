@@ -20,7 +20,8 @@
       "titles": {
         "login": "Log In",
         "register": "Register",
-        "forgotPassword": "Forgot your password?"
+        "forgotPassword": "Forgot your password?",
+        "resetPassword": "Reset Password"
       },
       "messages": {
         "dontHaveAccount": "Don't have an account?",
@@ -32,7 +33,7 @@
         "enterNewPassword": "Enter your new password. After that, you can log in with your new password.",
         "emailSent": "An email has been sent to your inbox with instructions to reset your password.",
         "loginAgain": "After changing your password, you can log in again.",
-        "success": "Password reset successfully"
+        "success": "Password reset successfully. If the change was made from the app, you can go back to the app and log in with your new password."
       }
     },
     "profiling": {
