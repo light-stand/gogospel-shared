@@ -13,7 +13,7 @@ export const defaultFilters: ExploreFilters = {
 
 export const useExploreMissions = (location = { lat: 0, long: 0 }) => {
   const { client, repo } = useApi();
-  const [focused, setFocused] = useState(0);
+  const [focused, setFocused] = useState<number | null>(null);
   const filters = useForm<ExploreFilters>({
     resolver: zodResolver(exploreFiltersSchema),
     defaultValues: defaultFilters,
@@ -28,10 +28,6 @@ export const useExploreMissions = (location = { lat: 0, long: 0 }) => {
   });
 
   const mission = useMemo(() => missions?.find((m) => m.id === focused), [missions, focused]);
-
-  useEffect(() => {
-    if (!mission && missions) setFocused(missions?.[Math.floor(missions.length - 1)]?.id || 0);
-  }, [missions, mission, focused]);
 
   return { focused, setFocused, missions, filters, mission, refetch };
 };
