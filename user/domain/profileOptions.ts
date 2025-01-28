@@ -59,16 +59,18 @@ export const getProfileOptions = (user?: UserProfile): ProfileOption => [
 export const getPublicProfileOptions = (user?: UserProfile): ProfileOption => [
   {
     items: [
-      {
-        icon: "handshake-outline",
-        label: "user.profile.options.done",
-        href: "/settings",
-      },
-      {
-        icon: "handshake-outline",
-        label: "user.profile.myMissions",
-        href: "/settings",
-      },
+      // TODO
+      // {
+      //   icon: "handshake-outline",
+      //   label: "user.profile.options.done",
+      //   href: "/settings",
+      // },
+      // TODO
+      // {
+      //   icon: "handshake-outline",
+      //   label: "user.profile.myMissions",
+      //   href: "/settings",
+      // },
       // {
       //   icon: "hand-heart",
       //   label: "user.profile.options.connectedVolunteers",
