@@ -34,6 +34,12 @@
         "emailSent": "An email has been sent to your inbox with instructions to reset your password.",
         "loginAgain": "After changing your password, you can log in again.",
         "success": "Password reset successfully. If the change was made from the app, you can go back to the app and log in with your new password."
+      },
+      "notice": {
+        "content": "By registering, you agree to our",
+        "terms": "Terms",
+        "and": "and",
+        "privacy": "Privacy Policy"
       }
     },
     "onboarding": {
