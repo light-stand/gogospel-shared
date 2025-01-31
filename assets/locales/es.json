@@ -2,7 +2,7 @@
   "translation": {
     "auth": {
       "modal": {
-        "title": "¡Bienvenido a GoGospel!",
+        "title": "¡Bienvenido a Go&Gospel!",
         "text": "Crea tu cuenta para comenzar",
         "items": {
           "connect": "Conéctate con Ministerios y Voluntarios",
@@ -70,12 +70,12 @@
         "edit": "Editar perfil"
       },
       "welcome": {
-        "title": "¡Bienvenido!",
+        "title": "¡Bienvenido a Go&Gospel!",
         "text": "Completa tu perfil para comenzar a disfrutar de todas las funciones de la aplicación. Estamos emocionados de ayudarte a conectar con otros ministerios y voluntarios, y juntos fortalecer nuestra comunidad. ¡Que esta experiencia sea enriquecedora y llena de bendiciones!"
       },
       "finish": {
         "title": "¡Perfil completo!",
-        "text": "Tu perfil está completo. Ahora puedes comenzar a conectarte con otros ministerios y voluntarios, crear misiones y mucho más. ¡Bienvenido a GoGospel!"
+        "text": "Tu perfil está completo. Ahora puedes comenzar a conectarte con otros ministerios y voluntarios, crear misiones y mucho más. ¡Bienvenido a Go&Gospel!"
       }
     },
     "mission": {
@@ -91,7 +91,7 @@
         },
         "helper": {
           "categories": "Selecciona una o más categorías que mejor describan tu misión",
-          "start": "¡Hola {ministry}, gracias por ser parte de GoGospel! Ahora será guiado por los pasos para que puedas crear tu una misión, a la cual voluntarios y misioneros podrán colaborar. ¡Vamos a empezar!",
+          "start": "¡Hola {ministry}, gracias por ser parte de Go&Gospel! Ahora será guiado por los pasos para que puedas crear tu una misión, a la cual voluntarios y misioneros podrán colaborar. ¡Vamos a empezar!",
           "duration": "¿Cuándo empieza y cuánto durará tu misión?",
           "location": "Selecciona la ubicación donde se llevará a cabo tu misión",
           "image": "Agrega una imágen que represente tu misión. Es opcional, pero recomendado. Puedes cambiarla más tarde si lo deseas.",
@@ -294,7 +294,7 @@
       },
       "verificationCode": {
         "title": "Añadir código de verificación",
-        "text": "Introduce el código que te ha proporcionado GoGospel para verificar tu ministerio.",
+        "text": "Introduce el código que te ha proporcionado Go&Gospel para verificar tu ministerio.",
         "label": "Código",
         "errors": {
           "required": "El código es requerido",
