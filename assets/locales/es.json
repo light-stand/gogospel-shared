@@ -36,6 +36,36 @@
         "success": "Contraseña restablecida con éxito. Si has solicitado desde la aplicación, vuelve a la aplicación para iniciar sesión."
       }
     },
+    "onboarding": {
+      "modal": {
+        "subtitle": "«Vayan y hagan discípulos» (Mateo 28:19)",
+        "description": "Aquí la fe se convierte en acción. Explora misiones, conéctate con otros creyentes y vive el Evangelio sirviendo. ¡Tu viaje para impactar el mundo comienza ahora!",
+        "sections": {
+          "explore": {
+            "title": "Explora",
+            "description": "Descubre un mapa interactivo con misiones cerca de ti o en cualquier parte del mundo. Usa el buscador para encontrar oportunidades que se alineen con tu llamado. ¡Aquí comienza tu aventura de servicio!"
+          },
+          "missions": {
+            "title": "Misiones",
+            "description": "Revisa la lista de misiones en las que estás involucrado/a o que has creado. Organiza, sigue tu progreso y mantente al día con cada paso que das para cumplir el propósito que Dios ha puesto en tu corazón."
+          },
+          "connections": {
+            "title": "Conexiones",
+            "description": "Conéctate con otros creyentes que comparten tu pasión por servir. Chatea, colabora y ora juntos. ¡La comunidad es clave para multiplicar el impacto del Evangelio!"
+          },
+          "profile": {
+            "title": "Perfil",
+            "description": "Personaliza tu espacio, comparte tu testimonio y celebra cada misión completada. Aquí puedes editar tu información y mostrar cómo Dios está obrando a través de ti."
+          }
+        },
+        "footer": {
+          "message": "Go&Gospel es más que una app; es una herramienta para vivir tu fe en acción. ¡Explora, conéctate y sirve! 🔥",
+          "verse": "«No nos cansemos de hacer el bien» (Gálatas 6:9)",
+          "cta": "Continuar sin cuenta",
+          "or": "o"
+        }
+      }
+    },
     "profiling": {
       "fields": {
         "bio": {
@@ -288,6 +318,7 @@
           "connectedVolunteers": "Volunatarios conectados",
           "settings": "Ajustes",
           "notification": "Notificaciones",
+          "help": "Ayuda",
           "verificationCode": "Código de verificación",
           "logout": "Cerrar sesión"
         }
