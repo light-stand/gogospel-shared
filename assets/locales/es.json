@@ -139,7 +139,8 @@
           "startDate": "Fecha de inicio",
           "duration": "Duración",
           "noDuration": "No hay un duración determinada, o es flexible",
-          "noStartDate": "No hay un fecha determinada, o es flexible"
+          "noStartDate": "No hay un fecha determinada, o es flexible",
+          "active": "Misión visible para todos / Activa"
         },
         "location": {
           "pick": "Selecciona una ubicación"
@@ -172,6 +173,10 @@
         "title": "Eliminar misión",
         "text": "¿Estás seguro de que quieres eliminar esta misión?",
         "confirm": "Eliminar"
+      },
+      "status": {
+        "pending": "Pendiente de revisión por Go&Gospel",
+        "approved": "Misión revisada y aprobada"
       },
       "actions": {
         "join": "Apuntarme",

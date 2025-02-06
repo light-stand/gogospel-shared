@@ -139,7 +139,8 @@
           "startDate": "Start Date",
           "duration": "Duration",
           "noDuration": "No duration, or is flexible",
-          "noStartDate": "No start date, or is flexible"
+          "noStartDate": "No start date, or is flexible",
+          "active": "Active / Visible for everyone"
         },
         "location": {
           "pick": "Pick a location"
@@ -172,6 +173,10 @@
         "title": "Delete mission",
         "text": "Are you sure you want to delete this mission?",
         "confirm": "Delete"
+      },
+      "status": {
+        "pending": "Pending review by Go&Gospel",
+        "approved": "Reviewed and approved"
       },
       "actions": {
         "join": "Join",
