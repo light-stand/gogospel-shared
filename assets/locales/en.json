@@ -94,8 +94,7 @@
         "interests": {
           "label": "My Interests",
           "error": "Select between 4 and 10 interests"
-        },
-        "type": {}
+        }
       },
       "titles": {
         "type": "I am",

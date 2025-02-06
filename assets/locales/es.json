@@ -94,8 +94,7 @@
         "interests": {
           "label": "Mis intereses",
           "error": "Selecciona entre 4 y 10 intereses"
-        },
-        "type": {}
+        }
       },
       "titles": {
         "type": "Soy",
