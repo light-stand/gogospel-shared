@@ -34,7 +34,7 @@ export const missionCreationSchema = z
     description: z.string().min(60, t(`${langPrefix}.description`)),
     startDate: z
       .date({ message: t(`${langPrefix}.startDate`) })
-      .min(new Date(), t(`${langPrefix}.startDateAfterToday`))
+      // .min(new Date(), t(`${langPrefix}.startDateAfterToday`))
       .optional(),
     duration: z
       .number()
@@ -44,6 +44,7 @@ export const missionCreationSchema = z
     durationMultiplier: z.number({ message: t(`${langPrefix}.durationMultiplier`) }),
     noDuration: z.boolean().optional(),
     noStartDate: z.boolean().optional(),
+    active: z.boolean().optional(),
     categories: z
       .array(
         z.enum(Object.keys(missionTypes) as [MissionType, ...MissionType[]], {
@@ -74,10 +75,10 @@ export const missionCreationSchema = z
     {
       path: ["duration"],
     }
-  )
-  .refine(
-    ({ noStartDate, startDate }) => noStartDate || dayjs(startDate).isAfter(new Date(), "day"),
-    { path: ["startDate"] }
   );
+// .refine(
+//   ({ noStartDate, startDate }) => noStartDate || dayjs(startDate).isAfter(new Date(), "day"),
+//   { path: ["startDate"] }
+// );
 
 export type MissionCreationFields = z.infer<typeof missionCreationSchema>;

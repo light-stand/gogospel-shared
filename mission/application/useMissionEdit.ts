@@ -39,6 +39,7 @@ export const useMissionEdit = ({ id, onSuccess }: UseMissionEditParams) => {
       const mission = getValues();
       updateMission({
         id,
+        active: mission.active,
         created_by: user?.id,
         title: mission.title,
         description: mission.description,
@@ -69,8 +70,7 @@ export const useMissionEdit = ({ id, onSuccess }: UseMissionEditParams) => {
 
   useEffect(() => {
     // Handle the case where the mission is not yet loaded
-    if (!mission || form.getValues().title !== undefined) return;
-
+    if (!mission) return;
     form.reset({
       ...mission,
       duration: parseDuration(mission.duration)[0],
@@ -88,5 +88,5 @@ export const useMissionEdit = ({ id, onSuccess }: UseMissionEditParams) => {
     });
   }, [mission, form]);
 
-  return { form, onSubmit, isLoading };
+  return { form, onSubmit, isLoading, mission };
 };
