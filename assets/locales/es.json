@@ -126,7 +126,7 @@
           "summary": "Tu misión"
         },
         "helper": {
-          "categories": "Selecciona una o más categorías que mejor describan tu misión",
+          "categories": "Selecciona una o más categorías que mejor describan tu misión. Mantén presionado para seleccionar la categoria principal de la misión.",
           "start": "¡Hola {ministry}, gracias por ser parte de Go&Gospel! Ahora será guiado por los pasos para que puedas crear tu una misión, a la cual voluntarios y misioneros podrán colaborar. ¡Vamos a empezar!",
           "duration": "¿Cuándo empieza y cuánto durará tu misión?",
           "location": "Selecciona la ubicación donde se llevará a cabo tu misión",
