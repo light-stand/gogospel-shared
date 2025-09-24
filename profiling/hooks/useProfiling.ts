@@ -10,6 +10,8 @@ import { MinistryType } from "@/user/domain/MinistryType";
 import { UserProfile } from "@/user/domain/User";
 import { useApi } from "@/common/context/ApiContext";
 
+const PLACEHOLDER_PIC =
+  "https://bawvmoyvwwzdkjmsagqe.supabase.co/storage/v1/object/public/go-gospel//placeholder.png";
 interface UseProfilingParams {
   onSuccess: () => void;
 }
@@ -42,7 +44,9 @@ export const useProfiling = ({ onSuccess: successCallback }: UseProfilingParams)
       user_id: session?.user.id as string,
       name: values.name,
       description: values.bio,
-      images: [values.picture],
+      // TEMP
+      // images: [values.picture],
+      images: [PLACEHOLDER_PIC],
       is_verified: false,
       type: values.ministryType[0] as MinistryType,
       interests: values.interests as MissionType[],

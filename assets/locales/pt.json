@@ -1,0 +1,457 @@
+{
+  "translation": {
+    "auth": {
+      "modal": {
+        "title": "Bem-vindo ao Go&Gospel!",
+        "text": "Crie sua conta para começar",
+        "items": {
+          "connect": "Conecte-se com Ministérios e Voluntários",
+          "serve": "Encontre Oportunidades para Servir",
+          "mission": "Crie e Gerencie Missões",
+          "grow": "Expanda o Impacto do Seu Ministério"
+        },
+        "button": "Registrar"
+      },
+      "fields": {
+        "email": "E-mail",
+        "password": "Senha",
+        "confirmPassword": "Confirmar Senha"
+      },
+      "titles": {
+        "login": "Entrar",
+        "register": "Registrar",
+        "forgotPassword": "Esqueceu sua senha?",
+        "resetPassword": "Redefinir Senha"
+      },
+      "messages": {
+        "dontHaveAccount": "Não tem uma conta?",
+        "forgotPassword": "Esqueceu sua senha?",
+        "googleSignIn": "Entrar com o Google"
+      },
+      "resetPassword": {
+        "enterEmail": "Digite seu e-mail e enviaremos um link para redefinir sua senha",
+        "enterNewPassword": "Digite sua nova senha. Depois disso, você poderá fazer login com ela.",
+        "emailSent": "Um e-mail foi enviado com instruções para redefinir sua senha.",
+        "loginAgain": "Após alterar sua senha, você pode entrar novamente.",
+        "success": "Senha redefinida com sucesso. Agora você pode acessar sua conta com a nova senha."
+      },
+      "notice": {
+        "content": "Ao se registrar, você concorda com nossos",
+        "terms": "Termos",
+        "and": "e",
+        "privacy": "Política de Privacidade"
+      }
+    },
+    "onboarding": {
+      "modal": {
+        "subtitle": "«Ide e fazei discípulos» (Mateus 28:19)",
+        "description": "Aqui, a fé se transforma em ação. Explore missões, conecte-se com outros cristãos e viva o Evangelho através do serviço. Sua jornada para impactar o mundo começa agora!",
+        "sections": {
+          "explore": {
+            "title": "Explorar",
+            "description": "Descubra um mapa interativo com missões perto de você ou em qualquer lugar do mundo. Use a busca para encontrar oportunidades alinhadas ao seu chamado."
+          },
+          "missions": {
+            "title": "Missões",
+            "description": "Gerencie e acompanhe as missões que você criou ou participa. Organize, monitore o progresso e avance no propósito que Deus colocou no seu coração."
+          },
+          "connections": {
+            "title": "Conexões",
+            "description": "Conecte-se com outros cristãos que compartilham sua paixão pelo serviço. Converse, colabore e ore juntos. A comunidade é essencial para multiplicar o impacto do Evangelho!"
+          },
+          "profile": {
+            "title": "Perfil",
+            "description": "Personalize seu espaço, compartilhe seu testemunho e celebre cada missão concluída. Edite suas informações e mostre como Deus está agindo em sua vida."
+          }
+        },
+        "footer": {
+          "message": "O Go&Gospel é mais que um app; é uma ferramenta para viver sua fé em ação. Explore, conecte-se e sirva! 🔥",
+          "verse": "«Não nos cansemos de fazer o bem» (Gálatas 6:9)",
+          "cta": "Continuar sem conta",
+          "or": "ou"
+        }
+      }
+    },
+    "profiling": {
+      "fields": {
+        "bio": {
+          "label": "Mais informações sobre mim",
+          "error": "A descrição é obrigatória e deve ter pelo menos 60 caracteres"
+        },
+        "name": {
+          "label": "Meu nome ou o nome do meu ministério",
+          "error": "O nome deve ter pelo menos 3 caracteres"
+        },
+        "ministryType": {
+          "label": "Selecione a categoria que melhor descreve sua atividade",
+          "error": "O tipo de ministério é obrigatório"
+        },
+        "image": {
+          "label": "Envie uma foto",
+          "error": "Este campo é obrigatório",
+          "helper": "Adicione uma foto de perfil que represente você, seu ministério ou sua organização. Pode ser uma foto pessoal ou uma imagem que reflita sua missão."
+        },
+        "interests": {
+          "label": "Meus Interesses",
+          "error": "Selecione entre 4 e 10 interesses"
+        }
+      },
+      "titles": {
+        "type": "Eu sou",
+        "name": "Eu sou...",
+        "bio": "Mais informações sobre mim",
+        "image": "Uma Foto",
+        "interests": "Meus Interesses",
+        "edit": "Editar Perfil"
+      },
+      "welcome": {
+        "title": "Bem-vindo ao Go&Gospel!",
+        "text": "Complete seu perfil para aproveitar todos os recursos do aplicativo. Estamos animados para ajudá-lo a se conectar com outros ministérios e voluntários. Que essa experiência seja enriquecedora e cheia de bênçãos!"
+      },
+      "finish": {
+        "title": "Perfil completo!",
+        "text": "Agora seu perfil está completo. Você já pode começar a se conectar com ministérios e voluntários, criar missões e muito mais. Bem-vindo ao Go&Gospel!"
+      }
+    },
+    "mission": {
+      "creation": {
+        "titles": {
+          "start": "Criar uma Missão",
+          "location": "Localização",
+          "title": "Estamos procurando...",
+          "duration": "Duração",
+          "categories": "Categorias",
+          "image": "Uma foto",
+          "summary": "Sua missão"
+        },
+        "helper": {
+          "categories": "Selecione uma ou mais categorias que melhor descrevem sua missão. Pressione e segure para selecionar a categoria principal.",
+          "start": "Olá {ministry}, obrigado por fazer parte do Go&Gospel! Agora você será guiado pelos passos para criar sua própria missão, na qual voluntários e missionários poderão colaborar. Vamos começar!",
+          "duration": "Quando sua missão começa e quanto tempo ela durará?",
+          "location": "Selecione o local onde sua missão acontecerá",
+          "image": "Adicione uma imagem que represente sua missão. É opcional, mas recomendado. Você pode alterá-la mais tarde, se desejar.",
+          "summary": "Sua missão está prestes a ser criada. Por favor, revise as informações antes de continuar."
+        },
+        "fields": {
+          "title": "Título",
+          "description": "Descrição",
+          "startDate": "Data de Início",
+          "duration": "Duração",
+          "noDuration": "Sem duração ou é flexível",
+          "noStartDate": "Sem data de início ou é flexível",
+          "active": "Ativo / Visível para todos"
+        },
+        "location": {
+          "pick": "Escolher um local"
+        },
+        "placeholder": {
+          "title": "Ex.: Voluntário para um acampamento de verão",
+          "description": "Ex.: Precisamos de voluntários para um acampamento de verão em Valência. A missão durará 2 semanas e acontecerá na comunidade local.",
+          "startDate": "Selecione uma data"
+        },
+        "error": {
+          "title": "O título é inválido",
+          "description": "A descrição é obrigatória e deve ter pelo menos 60 caracteres",
+          "startDate": "A data de início é obrigatória",
+          "duration": "A duração deve ser maior que 0",
+          "durationMultiplier": "É necessária uma unidade de duração",
+          "categories": "Selecione entre 4 e 10 categorias",
+          "startDateAfterToday": "A data de início deve ser posterior a hoje",
+          "location": "A localização é obrigatória"
+        },
+        "duration": {
+          "days": "Dias",
+          "weeks": "Semanas",
+          "months": "Meses"
+        }
+      },
+      "edit": {
+        "title": "Editar missão"
+      },
+      "delete": {
+        "title": "Excluir missão",
+        "text": "Tem certeza de que deseja excluir esta missão?",
+        "confirm": "Excluir"
+      },
+      "status": {
+        "pending": "Aguardando revisão do Go&Gospel",
+        "approved": "Revisado e aprovado"
+      },
+      "actions": {
+        "join": "Participar",
+        "favorite": "Favoritar",
+        "give": "Doar"
+      },
+      "types": {
+        "categories": {
+          "mission": "Missão",
+          "justice": "Justiça",
+          "business": "Negócios",
+          "children": "Crianças",
+          "arts": "Artes"
+        },
+        "adventure": "Aventura",
+        "anti-trafficking": "Combate ao Tráfico",
+        "bible": "Bíblia",
+        "business": "Negócios",
+        "children-and-youth": "Crianças e Jovens",
+        "children-at-risk": "Crianças em Risco",
+        "cinematography": "Cinematografia",
+        "compassion": "Compaixão",
+        "community-development": "Desenvolvimento Comunitário",
+        "counseling": "Aconselhamento",
+        "culture": "Cultura",
+        "design": "Design",
+        "evangelism": "Evangelismo",
+        "family": "Família",
+        "fine-arts": "Belas Artes",
+        "frontiers": "Fronteiras",
+        "healthcare": "Saúde",
+        "leadership": "Liderança",
+        "media": "Mídia",
+        "music": "Música",
+        "performing-arts": "Artes Cênicas",
+        "photography": "Fotografia",
+        "poor-and-marginalized": "Pobres e Marginalizados",
+        "reconciliation": "Reconciliação",
+        "refugees": "Refugiados",
+        "revival": "Avivamento",
+        "science": "Ciência",
+        "social-justice": "Justiça Social",
+        "spiritual-growth": "Crescimento Espiritual",
+        "sports": "Esportes",
+        "teaching": "Ensino",
+        "technology": "Tecnologia",
+        "the-unreached": "Os Não Alcançados",
+        "urban": "Urbano",
+        "writing": "Escrita",
+        "worship": "Adoração"
+      },
+      "errors": {
+        "notFound": "Missão não encontrada"
+      },
+      "explore": {
+        "filters": {
+          "title": "Filtros",
+          "interests": "Interesses",
+          "ministryType": "Tipo de ministério",
+          "selected": "{interests} selecionados",
+          "distance": "Distância",
+          "unlimited": "Ilimitado"
+        }
+      },
+      "list": {
+        "types": {
+          "myMissions": "Minhas missões",
+          "favorites": "Favoritos",
+          "involved": "Envolvido"
+        }
+      }
+    },
+    "ministry": {
+      "types": {
+        "volunteer": "Voluntário",
+        "missionary": "Missionário",
+        "evangelist": "Evangelista",
+        "church": "Igreja",
+        "association": "Associação",
+        "foundation": "Fundação",
+        "ngo": "ONG",
+        "ministry": "Ministério",
+        "rehab": "Centro de Reabilitação",
+        "women": "Mulheres",
+        "media": "Mídia",
+        "mission-agency": "Agência Missionária",
+        "fraternity": "Fraternidade",
+        "denomination": "Denominação",
+        "organization": "Organização",
+        "bookstore": "Livraria",
+        "record-label": "Gravadora",
+        "business": "Negócio",
+        "school-university": "Escola ou Universidade",
+        "seminary": "Seminário ou Centro Teológico",
+        "sports": "Esportes"
+      }
+    },
+    "connections": {
+      "submission": {
+        "title": "Você quer se juntar a {name}?",
+        "text": "{ministry} receberá uma notificação e poderá aceitar ou rejeitar seu pedido. Você pode escrever uma mensagem para {ministry} se apresentando e explicando por que deseja se juntar à missão deles.",
+        "errors": {
+          "message": "A mensagem é obrigatória e deve ter pelo menos 40 caracteres",
+          "alreadySent": "Você já enviou um pedido para esta missão",
+          "unknown": "Erro ao enviar o pedido",
+          "notAccepted": "O pedido ainda não foi aceito. Você poderá abrir o chat assim que o pedido for aceito."
+        },
+        "manage": {
+          "popup": {
+            "title": {
+              "accepted": "Aceitar pedido?",
+              "rejected": "Rejeitar pedido?",
+              "pending": "Reabrir pedido?"
+            },
+            "text": {
+              "accepted": "O voluntário poderá entrar em contato com você",
+              "rejected": "O voluntário não poderá entrar em contato com você ou reenviar o pedido. Você pode desfazer essa ação a qualquer momento.",
+              "pending": "Você poderá aceitar ou rejeitar este voluntário novamente."
+            }
+          }
+        },
+        "actions": {
+          "delete": "Excluir",
+          "addFeedback": "Adicionar feedback"
+        }
+      },
+      "chat": {
+        "typeMessage": "Digite uma mensagem...",
+        "send": "Enviar"
+      }
+    },
+    "maps": {
+      "picker": {
+        "helper": "Pesquise a localização da sua missão",
+        "confirm": "Confirmar",
+        "search": "Buscar..."
+      },
+      "distance": "{distance} km de você"
+    },
+    "user": {
+      "profile": {
+        "edit": "Editar perfil",
+        "favorites": "Favoritos",
+        "joined": "Participações",
+        "myMissions": "Minhas missões",
+        "options": {
+          "profile": "Perfil",
+          "done": "Missões concluídas",
+          "feedback": "Testemunhos",
+          "connectedVolunteers": "Voluntários conectados",
+          "settings": "Configurações",
+          "help": "Ajuda",
+          "notification": "Notificações",
+          "verificationCode": "Código de verificação",
+          "logout": "Sair"
+        }
+      },
+      "verificationCode": {
+        "title": "Código de Verificação",
+        "text": "Digite o código que você recebeu do Go&Gospel para verificar seu ministério",
+        "label": "Código",
+        "errors": {
+          "required": "O código é obrigatório",
+          "invalid": "O código é inválido"
+        },
+        "success": "Parabéns! Seu ministério foi verificado!",
+        "successText": "Agora você pode aproveitar os benefícios de ser um ministério verificado, como o selo de verificação e a possibilidade de criar missões sem precisar esperar pela aprovação."
+      }
+    },
+    "feedback": {
+      "titles": {
+        "list": "Testemunhos",
+        "add": "Adicionar um testemunho"
+      },
+      "modes": {
+        "received": "Recebido",
+        "given": "Dado"
+      },
+      "creation": {
+        "title": "Adicionar Feedback",
+        "text": "Escreva um feedback para {name}. Isso será visível para todos, então certifique-se de que seja positivo e construtivo.",
+        "fields": {
+          "title": "Título",
+          "description": "Descrição"
+        },
+        "placeholder": {
+          "title": "Ex.: Experiência incrível",
+          "description": "Ex.: Tive uma experiência incrível como voluntário nesta missão. Eu definitivamente recomendaria para qualquer um que queira fazer a diferença."
+        },
+        "errors": {
+          "title": "A avaliação é obrigatória",
+          "description": "A mensagem é obrigatória e deve ter pelo menos 40 caracteres",
+          "alreadySent": "Você já enviou um feedback para este usuário",
+          "unknown": "Erro ao enviar o feedback"
+        },
+        "success": "Feedback enviado"
+      },
+      "delete": {
+        "title": "Excluir feedback",
+        "text": "Tem certeza de que deseja excluir este feedback?",
+        "success": "Feedback excluído"
+      },
+      "actions": {
+        "delete": "Excluir feedback"
+      }
+    },
+    "action": {
+      "next": "Continuar",
+      "cancel": "Cancelar",
+      "save": "Salvar",
+      "later": "Mais tarde",
+      "done": "Concluído",
+      "send": "Enviar",
+      "delete": "Excluir",
+      "back": "Voltar"
+    },
+    "media": {
+      "launchCamera": "Abrir Câmera",
+      "fromGallery": "Escolher da Galeria"
+    },
+    "error": {
+      "unknown": "Erro Desconhecido",
+      "notMissionary": "Você precisa ser um missionário para fazer isso",
+      "notMinistry": "Você precisa ser um ministério para fazer isso"
+    },
+    "screen": {
+      "explore": "Início",
+      "connections": "Conexões",
+      "profile": "Perfil",
+      "missions": "Missões"
+    },
+    "noResults": {
+      "missions": {
+        "title": "Nenhuma missão encontrada",
+        "text": "Não há missões que correspondam aos seus critérios de pesquisa. Tente novamente com filtros diferentes."
+      },
+      "myMissions": {
+        "title": "Nenhuma missão ainda",
+        "text": "Você ainda não criou nenhuma missão. Crie uma agora!",
+        "button": "Criar uma missão"
+      },
+      "favorites": {
+        "title": "Nenhum favorito ainda",
+        "text": "Você ainda não favoritou nenhuma missão. Encontre uma agora!"
+      },
+      "involved": {
+        "title": "Nenhuma missão ainda",
+        "text": "Você ainda não se juntou a nenhuma missão. Encontre uma agora!"
+      },
+      "connections": {
+        "title": "Nenhuma conexão ainda",
+        "text": "Você ainda não se conectou com nenhum ministério ou voluntário. Encontre um agora!"
+      },
+      "feedbackReceived": {
+        "title": "Nenhum feedback ainda",
+        "text": "Assim que o usuário receber um feedback, ele aparecerá aqui"
+      },
+      "feedbackGiven": {
+        "title": "Nenhum feedback ainda",
+        "text": "Assim que o usuário der um feedback, ele aparecerá aqui"
+      },
+      "selectChat": {
+        "title": "Nenhum chat selecionado",
+        "text": "Selecione um chat para começar a conversar"
+      }
+    },
+    "alerts": {
+      "comingSoon": {
+        "title": "Em breve!",
+        "text": "Este recurso ainda não está disponível. Fique atento para atualizações!"
+      },
+      "somethingWentWrong": {
+        "title": "Ops!",
+        "text": "Algo deu errado. Por favor, tente novamente mais tarde.",
+        "button": "Tentar novamente"
+      }
+    }
+  }
+}

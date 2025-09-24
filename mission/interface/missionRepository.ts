@@ -32,10 +32,7 @@ export class MissionRepository extends Repository<Mission> {
 
   list = async (mode: MissionListTypes, userId: string) => {
     const listMissionFilters = {
-      myMissions: [
-        ["active", "eq", true],
-        ["created_by", "eq", userId],
-      ],
+      myMissions: [["created_by", "eq", userId]],
       favorites: [
         ["approved", "eq", true],
         ["active", "eq", true],

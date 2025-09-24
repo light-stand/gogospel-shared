@@ -1,13 +1,15 @@
 import { UserProfile } from "./User";
 import { MaterialIconType } from "@/components/ui";
 
+export type ProfileActions = "logout" | "openVerificationCode" | "openHelp";
+
 export type ProfileOption = {
   label?: string;
   items: {
     icon: MaterialIconType;
     label: string;
     href?: string;
-    action?: "logout" | "openVerificationCode";
+    action?: ProfileActions;
     disabled?: boolean;
   }[];
 }[];
@@ -37,6 +39,11 @@ export const getProfileOptions = (user?: UserProfile): ProfileOption => [
     label: "user.profile.options.settings",
     items: [
       {
+        icon: "help-rhombus-outline",
+        label: "user.profile.options.help",
+        action: "openHelp",
+      },
+      {
         icon: "bell",
         label: "user.profile.options.notification",
         href: "/settings",
@@ -59,16 +66,18 @@ export const getProfileOptions = (user?: UserProfile): ProfileOption => [
 export const getPublicProfileOptions = (user?: UserProfile): ProfileOption => [
   {
     items: [
-      {
-        icon: "handshake-outline",
-        label: "user.profile.options.done",
-        href: "/settings",
-      },
-      {
-        icon: "handshake-outline",
-        label: "user.profile.myMissions",
-        href: "/settings",
-      },
+      // TODO
+      // {
+      //   icon: "handshake-outline",
+      //   label: "user.profile.options.done",
+      //   href: "/settings",
+      // },
+      // TODO
+      // {
+      //   icon: "handshake-outline",
+      //   label: "user.profile.myMissions",
+      //   href: "/settings",
+      // },
       // {
       //   icon: "hand-heart",
       //   label: "user.profile.options.connectedVolunteers",

@@ -63,7 +63,7 @@ export const missionCreationSchema = z.object({
   contactName: z.string(),
   contactEmail: z.string().email({ message: t(`${langPrefix}.contactEmail`) }),
   contactPhone: z.string().optional(),
-  // image: z.string().optional(),
+  image: z.string().optional(),
 });
 // .refine(
 //   ({ noDuration, duration }) =>

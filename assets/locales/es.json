@@ -2,7 +2,7 @@
   "translation": {
     "auth": {
       "modal": {
-        "title": "¡Bienvenido a GoGospel!",
+        "title": "¡Bienvenido a Go&Gospel!",
         "text": "Crea tu cuenta para comenzar",
         "items": {
           "connect": "Conéctate con Ministerios y Voluntarios",
@@ -35,6 +35,42 @@
         "emailSent": "Se ha enviado un correo electrónico a tu bandeja de entrada con instrucciones para restablecer tu contraseña.",
         "loginAgain": "Después de cambiar tu contraseña, puedes iniciar sesión de nuevo.",
         "success": "Contraseña restablecida con éxito. Si has solicitado desde la aplicación, vuelve a la aplicación para iniciar sesión."
+      },
+      "notice": {
+        "content": "Al registrarte, aceptas nuestros",
+        "terms": "Términos",
+        "and": "y",
+        "privacy": "Política de Privacidad"
+      }
+    },
+    "onboarding": {
+      "modal": {
+        "subtitle": "«Vayan y hagan discípulos» (Mateo 28:19)",
+        "description": "Aquí la fe se convierte en acción. Explora misiones, conéctate con otros creyentes y vive el Evangelio sirviendo. ¡Tu viaje para impactar el mundo comienza ahora!",
+        "sections": {
+          "explore": {
+            "title": "Explora",
+            "description": "Descubre un mapa interactivo con misiones cerca de ti o en cualquier parte del mundo. Usa el buscador para encontrar oportunidades que se alineen con tu llamado. ¡Aquí comienza tu aventura de servicio!"
+          },
+          "missions": {
+            "title": "Misiones",
+            "description": "Revisa la lista de misiones en las que estás involucrado/a o que has creado. Organiza, sigue tu progreso y mantente al día con cada paso que das para cumplir el propósito que Dios ha puesto en tu corazón."
+          },
+          "connections": {
+            "title": "Conexiones",
+            "description": "Conéctate con otros creyentes que comparten tu pasión por servir. Chatea, colabora y ora juntos. ¡La comunidad es clave para multiplicar el impacto del Evangelio!"
+          },
+          "profile": {
+            "title": "Perfil",
+            "description": "Personaliza tu espacio, comparte tu testimonio y celebra cada misión completada. Aquí puedes editar tu información y mostrar cómo Dios está obrando a través de ti."
+          }
+        },
+        "footer": {
+          "message": "Go&Gospel es más que una app; es una herramienta para vivir tu fe en acción. ¡Explora, conéctate y sirve! 🔥",
+          "verse": "«No nos cansemos de hacer el bien» (Gálatas 6:9)",
+          "cta": "Continuar sin cuenta",
+          "or": "o"
+        }
       }
     },
     "profiling": {
@@ -59,8 +95,7 @@
         "interests": {
           "label": "Mis intereses",
           "error": "Selecciona entre 4 y 10 intereses"
-        },
-        "type": {}
+        }
       },
       "titles": {
         "type": "Soy",
@@ -71,12 +106,12 @@
         "edit": "Editar perfil"
       },
       "welcome": {
-        "title": "¡Bienvenido!",
+        "title": "¡Bienvenido a Go&Gospel!",
         "text": "Completa tu perfil para comenzar a disfrutar de todas las funciones de la aplicación. Estamos emocionados de ayudarte a conectar con otros ministerios y voluntarios, y juntos fortalecer nuestra comunidad. ¡Que esta experiencia sea enriquecedora y llena de bendiciones!"
       },
       "finish": {
         "title": "¡Perfil completo!",
-        "text": "Tu perfil está completo. Ahora puedes comenzar a conectarte con otros ministerios y voluntarios, crear misiones y mucho más. ¡Bienvenido a GoGospel!"
+        "text": "Tu perfil está completo. Ahora puedes comenzar a conectarte con otros ministerios y voluntarios, crear misiones y mucho más. ¡Bienvenido a Go&Gospel!"
       }
     },
     "mission": {
@@ -100,8 +135,8 @@
           "contact": "Información de Contacto"
         },
         "helper": {
-          "categories": "Selecciona una o más categorías que mejor describan tu misión",
-          "start": "¡Hola {ministry}, gracias por ser parte de GoGospel! Ahora será guiado por los pasos para que puedas crear tu una misión, a la cual voluntarios y misioneros podrán colaborar. ¡Vamos a empezar!",
+          "categories": "Selecciona una o más categorías que mejor describan tu misión. Mantén presionado para seleccionar la categoria principal de la misión.",
+          "start": "¡Hola {ministry}, gracias por ser parte de Go&Gospel! Ahora será guiado por los pasos para que puedas crear tu una misión, a la cual voluntarios y misioneros podrán colaborar. ¡Vamos a empezar!",
           "duration": "¿Cuándo empieza y cuánto durará tu misión?",
           "location": "Selecciona la ubicación donde se llevará a cabo tu misión",
           "image": "Agrega una imágen que represente tu misión. Es opcional, pero recomendado. Puedes cambiarla más tarde si lo deseas.",
@@ -153,6 +188,10 @@
         "title": "Eliminar misión",
         "text": "¿Estás seguro de que quieres eliminar esta misión?",
         "confirm": "Eliminar"
+      },
+      "status": {
+        "pending": "Pendiente de revisión por Go&Gospel",
+        "approved": "Misión revisada y aprobada"
       },
       "actions": {
         "join": "Apuntarme",
@@ -306,13 +345,14 @@
           "connectedVolunteers": "Volunatarios conectados",
           "settings": "Ajustes",
           "notification": "Notificaciones",
+          "help": "Ayuda",
           "verificationCode": "Código de verificación",
           "logout": "Cerrar sesión"
         }
       },
       "verificationCode": {
         "title": "Añadir código de verificación",
-        "text": "Introduce el código que te ha proporcionado GoGospel para verificar tu ministerio.",
+        "text": "Introduce el código que te ha proporcionado Go&Gospel para verificar tu ministerio.",
         "label": "Código",
         "errors": {
           "required": "El código es requerido",
