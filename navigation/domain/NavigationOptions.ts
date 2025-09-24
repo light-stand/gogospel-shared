@@ -1,6 +1,6 @@
 export const navigationOptions = [
   {
-    title: "screen.explore",
+    title: "screen.oportunities",
     url: "/explore",
     icon: "compass-outline",
     activeIcon: "compass",

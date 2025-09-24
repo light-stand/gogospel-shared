@@ -22,6 +22,9 @@ export type Mission = {
   active?: boolean;
   approved?: boolean;
   favorite?: Favorite | Favorite[];
+  contact_name?: string;
+  contact_email?: string;
+  contact_phone?: string;
 };
 
 export type MissionViewInput = {

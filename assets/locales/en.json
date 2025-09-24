@@ -87,7 +87,8 @@
           "duration": "Duration",
           "categories": "Categories",
           "image": "A photo",
-          "summary": "Your mission"
+          "summary": "Your mission",
+          "contact": "Contact Information"
         },
         "helper": {
           "categories": "Select one or more categories that best describe your mission",
@@ -103,7 +104,10 @@
           "startDate": "Start Date",
           "duration": "Duration",
           "noDuration": "No duration, or is flexible",
-          "noStartDate": "No start date, or is flexible"
+          "noStartDate": "No start date, or is flexible",
+          "contactName": "Contact Name",
+          "contactEmail": "Contact Email",
+          "contactPhone": "WhatsApp Number (Optional)"
         },
         "location": {
           "pick": "Pick a location"
@@ -111,7 +115,10 @@
         "placeholder": {
           "title": "E.g. Volunteer for a summer camp",
           "description": "E.g. We need volunteers for a summer camp in Valencia. The mission will last for 2 weeks and will take place in the local community.",
-          "startDate": "Select a date"
+          "startDate": "Select a date",
+          "contactName": "E.g. John Doe",
+          "contactEmail": "E.g. john.doe@example.com",
+          "contactPhone": "E.g. +1234567890"
         },
         "error": {
           "title": "The title is invalid",
@@ -121,7 +128,8 @@
           "durationMultiplier": "A duration unit is required",
           "categories": "Select between 4 and 10 categories",
           "startDateAfterToday": "The start date must be after today",
-          "location": "The location is required"
+          "location": "The location is required",
+          "contactEmail": "The email is invalid"
         },
         "duration": {
           "days": "Days",
@@ -206,6 +214,14 @@
           "favorites": "Favorites",
           "involved": "Involved"
         }
+      },
+      "contact": {
+        "title": "Interested? Talk to {name}:",
+        "whatsappAction": "💬 Chat on WhatsApp",
+        "whatsappResult": "Opens the conversation directly in your app",
+        "emailAction": "📧 Send an Email",
+        "emailResult": "Click to open your email client",
+        "whatsappAlternative": "Or, if you prefer:"
       }
     },
     "ministry": {

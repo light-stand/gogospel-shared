@@ -24,6 +24,7 @@
         "resetPassword": "Restablecer contraseña"
       },
       "messages": {
+        "helper": "Crea una cuenta para crear oportunidades y conectar con otros ministerios. ¡Únete a nuestra comunidad!",
         "dontHaveAccount": "¿No tienes una cuenta?",
         "forgotPassword": "¿Olvidaste tu contraseña?",
         "googleSignIn": "Continuar con Google"
@@ -79,6 +80,14 @@
       }
     },
     "mission": {
+      "contact": {
+        "title": "¿Interesado? Habla con {name}:",
+        "whatsappAction": "💬 Conversar por WhatsApp",
+        "whatsappResult": "Abre la conversación directamente en tu app",
+        "emailAction": "📧 Enviar un Email",
+        "emailResult": "Haz clic para abrir tu cliente de email",
+        "whatsappAlternative": "O, si lo prefieres:"
+      },
       "creation": {
         "titles": {
           "start": "Creemos una Misión",
@@ -87,7 +96,8 @@
           "duration": "Duración",
           "categories": "Categorías",
           "image": "Una foto",
-          "summary": "Tu misión"
+          "summary": "Tu misión",
+          "contact": "Información de Contacto"
         },
         "helper": {
           "categories": "Selecciona una o más categorías que mejor describan tu misión",
@@ -103,7 +113,10 @@
           "startDate": "Fecha de inicio",
           "duration": "Duración",
           "noDuration": "No hay un duración determinada, o es flexible",
-          "noStartDate": "No hay un fecha determinada, o es flexible"
+          "noStartDate": "No hay un fecha determinada, o es flexible",
+          "contactName": "Nombre de Contacto",
+          "contactEmail": "Email de Contacto",
+          "contactPhone": "Número de WhatsApp (Opcional)"
         },
         "location": {
           "pick": "Selecciona una ubicación"
@@ -111,7 +124,10 @@
         "placeholder": {
           "title": "Ej: Voluntario para un campamento de verano",
           "description": "Ej: Necesitamos voluntarios para un campamento de verano en Valencia. La misión durará 2 semanas y se llevará a cabo en la comunidad local.",
-          "startDate": "Selecciona una fecha"
+          "startDate": "Selecciona una fecha",
+          "contactName": "Ej: Juan Pérez",
+          "contactEmail": "Ej: juan.perez@ejemplo.com",
+          "contactPhone": "Ej: +34123456789"
         },
         "error": {
           "title": "El títutlo es inválido",
@@ -121,7 +137,8 @@
           "durationMultiplier": "Una unidad de duración es requerida",
           "categories": "Seleccione entre 4 y 10 categorías",
           "startDateAfterToday": "La fecha de inicio tiene que ser después de hoy",
-          "location": "La ubicación es requerida"
+          "location": "La ubicación es requerida",
+          "contactEmail": "El email es inválido"
         },
         "duration": {
           "days": "Días",
@@ -191,6 +208,7 @@
         "notFound": "Misión no encontrada"
       },
       "explore": {
+        "imLookingFor": "Estoy buscando...",
         "filters": {
           "title": "Filtros",
           "interests": "Intereses",
@@ -202,7 +220,7 @@
       },
       "list": {
         "types": {
-          "myMissions": "Mis misiones",
+          "myMissions": "Mis oportunidades",
           "favorites": "Favoritos",
           "involved": "Involucrado"
         }
@@ -271,16 +289,16 @@
       "picker": {
         "helper": "Busca la ubicación de tu misión",
         "confirm": "Confirmar",
-        "search": "Buscar..."
+        "search": "Busca una ubicación"
       },
-      "distance": "A {distance} km de ti"
+      "distance": "A {distance} km"
     },
     "user": {
       "profile": {
         "edit": "Editar perfil",
         "favorites": "Favoritos",
         "joined": "Se ha unido",
-        "myMissions": "Mis misiones",
+        "myMissions": "Mis oportunidades",
         "options": {
           "profile": "Perfil",
           "done": "Misiones completadas",
@@ -349,7 +367,8 @@
       "done": "Listo",
       "send": "Enviar",
       "delete": "Eliminar",
-      "back": "Volver"
+      "back": "Volver",
+      "saving": "Guardando..."
     },
     "media": {
       "launchCamera": "Abrir cámara",
@@ -361,10 +380,10 @@
       "notMinistry": "Tienes que ser un ministerio para hacer esto"
     },
     "screen": {
-      "explore": "Inicio",
-      "connections": "Conexiones",
-      "profile": "Perfil",
-      "missions": "Misiones"
+      "opportunities": "Oportunidades",
+      "postAJob": "Publicar oportunidad",
+      "login": "Entrar",
+      "profile": "Mi Perfil"
     },
     "noResults": {
       "missions": {

@@ -3,7 +3,10 @@ import { useForm } from "react-hook-form";
 import { useMutation, useQueryClient } from "react-query";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { MissionCreationFields, missionCreationSchema } from "@/mission/domain/MissionCreationForm";
+import {
+  MissionCreationFields,
+  missionCreationSchema,
+} from "@/mission/domain/MissionCreationForm";
 import { useUserStore } from "@/user/store/useUserStore";
 import { useApi } from "@/common/context/ApiContext";
 
@@ -11,7 +14,9 @@ interface useMissionCreationParams {
   onSuccess: () => void;
 }
 
-export const useMissionCreation = ({ onSuccess: successCallback }: useMissionCreationParams) => {
+export const useMissionCreation = ({
+  onSuccess: successCallback,
+}: useMissionCreationParams) => {
   const queryClient = useQueryClient();
   const { user } = useUserStore();
   const { repo } = useApi();
@@ -31,7 +36,9 @@ export const useMissionCreation = ({ onSuccess: successCallback }: useMissionCre
     successCallback();
   };
 
-  const { mutate: createMission } = useMutation(repo?.mission.create, { onSuccess });
+  const { mutate: createMission } = useMutation(repo?.mission.create, {
+    onSuccess,
+  });
 
   const onSubmit = () => {
     const values = getValues();
@@ -41,12 +48,17 @@ export const useMissionCreation = ({ onSuccess: successCallback }: useMissionCre
       description: values.description,
       start_date: values.noStartDate ? null : values.startDate,
       duration:
-        values.noDuration || !values.duration ? null : values.duration * values.durationMultiplier,
+        values.noDuration || !values.duration
+          ? null
+          : values.duration * values.durationMultiplier,
       categories: values.categories,
       location: `POINT(${values.location.longitude} ${values.location.latitude})`,
       location_name: values.location.locationName,
       country: values.location.country,
       ...(values.image && { images: [values.image] }),
+      contact_name: values.contactName,
+      contact_email: values.contactEmail,
+      contact_phone: values.contactPhone,
     });
   };
 

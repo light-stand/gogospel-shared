@@ -8,34 +8,46 @@ const key = process.env.EXPO_PUBLIC_GOOGLE_MAPS_API_KEY;
 export type AutoCompleteResult = { description: string; place_id: string };
 
 export const geocode = async (address: string) => {
-  const response = await axios.get("https://maps.googleapis.com/maps/api/geocode/json", {
-    params: { key, address },
-  });
+  const response = await axios.get(
+    "https://maps.googleapis.com/maps/api/geocode/json",
+    {
+      params: { key, address },
+    },
+  );
   return response.data.results[0].geometry;
 };
 
 export const reverseGeocode = async (coords: LatLng) => {
-  const response = await axios.get("https://maps.googleapis.com/maps/api/geocode/json", {
-    params: { key, latlng: `${coords.latitude},${coords.longitude}` },
-  });
+  const response = await axios.get(
+    "https://maps.googleapis.com/maps/api/geocode/json",
+    {
+      params: { key, latlng: `${coords.latitude},${coords.longitude}` },
+    },
+  );
   return response.data.results[0] as ReverseGeocodeResponse;
 };
 
 export const autoComplete = async (input: string) => {
   if (!input || input.length < 3) return [];
-  const response = await axios.get("https://maps.googleapis.com/maps/api/place/autocomplete/json", {
-    params: { key, input },
-  });
+  const response = await axios.get(
+    "https://maps.googleapis.com/maps/api/place/autocomplete/json",
+    {
+      params: { key, input, types: "(regions)", language: "es" },
+    },
+  );
   return response.data.predictions as AutoCompleteResult[];
 };
 
 export const getPlaceDetails = async (placeId: string) => {
-  const response = await axios.get("https://maps.googleapis.com/maps/api/place/details/json", {
-    params: {
-      key,
-      placeid: placeId,
-      fields: "geometry,address_components",
+  const response = await axios.get(
+    "https://maps.googleapis.com/maps/api/place/details/json",
+    {
+      params: {
+        key,
+        placeid: placeId,
+        fields: "geometry,address_components",
+      },
     },
-  });
+  );
   return response.data.result;
 };
